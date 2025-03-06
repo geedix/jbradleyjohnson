@@ -1,4 +1,6 @@
+
 ---
+
 title: My Third Blog Post
 author: Astro Learner
 description: "it's a coup"
@@ -7,5 +9,21 @@ image:
     alt: "The Astro logo on a dark background with rainbow rays."
 pubDate: 2022-07-15
 tags: ["astro", "learning in public", "setbacks", "community"]
+
 ---
-It wasn't always smooth sailing, but I'm enjoying building with Astro. And, the [Discord community](https://astro.build/chat) is really friendly and helpful!
+
+<h1>hello</h1>
+I don't really want a blog! What am I doing here? ! ?
+<style>
+  h1 {
+    color: yellow;
+    font-family: "futura", sans-serif;
+    font-size: 60px;
+    background-color: lightskyblue;
+    text-align: center;
+  }
+
+  p {
+    color: blue;
+  }
+</style>
