@@ -22,5 +22,9 @@ html {
     font-size: 2.5rem;
   }
   p{
+    /* color:fuchsia; */
     max-width:600px;
+  }
+  .skill{
+    color:darkolivegreen;;
   }

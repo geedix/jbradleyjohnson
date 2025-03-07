@@ -2,7 +2,7 @@
 
 import '../styles/global.css';
 
-const pageTitle = "About Me";
+const pageTitle = "Sugar Me";
 
 const identity = {
   firstName: "Brad",
@@ -21,6 +21,7 @@ const skillColor = "navy";
 const fontWeight = "bold";
 const textCase = "uppercase";
 
+
 ---
 
 
@@ -30,8 +31,15 @@ const textCase = "uppercase";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} >
-    <title>about: J Bradley Johnson</title>
+    <title>{pageTitle}</title>
 
+    <!-- <link rel="stylesheet" href="https://github.com/geedix/jbradleyjohnson/blob/master/src/styles/global.css"> -->
+
+<style>
+    .skill{
+        color:brown;
+    }
+</style>
 
     
   </head>
@@ -39,7 +47,8 @@ const textCase = "uppercase";
     <a href="../">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
-    <h1>I am many things, such as for example, you.</h1>
+    <h1>{pageTitle}</h1>
+    <h2>I am many things, such as for example, you.</h2>
 
     <p>I get along with people in general. 
         I have always strived to love everybody. As a child, I learned that this is the way our saviour Jesus Christ did things.</p>
