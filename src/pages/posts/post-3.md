@@ -1,15 +1,13 @@
-
 ---
-
+layout: ../../layouts/MarkdownPostLayout.astro
 title: My Third Blog Post
-author: Astro Learner
+author: JBJ
 description: "it's a coup"
 image:
     url: "https://docs.astro.build/assets/rays.webp"
     alt: "The Astro logo on a dark background with rainbow rays."
 pubDate: 2022-07-15
 tags: ["astro", "learning in public", "setbacks", "community"]
-
 ---
 
 <h1>hello</h1>
