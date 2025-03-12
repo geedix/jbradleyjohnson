@@ -11,9 +11,7 @@ tags: ["astro", "blogging", "learning in public", "successes"]
 
 --- 
 
-
-
-It is a fucked up situation!
+I am assuming nobody will read this, that's why I don't care what it says
 
 <!-- <script>
     import '../styles/global.css';

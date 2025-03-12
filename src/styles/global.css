@@ -3,6 +3,10 @@ html {
     font-family: "futura", sans-serif;
     line-height: 1.5;
   }
+
+html.dark{
+  filter:invert();
+}  
   
   body {
     margin: 0 auto;
@@ -21,20 +25,29 @@ html {
     margin: 1rem 0;
     font-size: 2.5rem;
   }
-
+  h3{
+    color:yellow;
+    background-color:blue;
+    text-align:center;
+    border-radius:5px;
+    letter-spacing: 0.12em;
+    font-family:"monaco", " System Mono", 'Lucida Sans',  monospace;
+  }
   
   .skill{
-    color:darkolivegreen;;
+    color:fuchsia;
   }
 
-
-   footer a {
-      padding: 0.5rem 1rem;
-      color: white;
-      background-color: blue;
-      text-decoration: none;
-      border-radius:1em;
-    }
+footer {
+    font-size:x-small;
+}
+footer a {
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: blue;
+  text-decoration: none;
+  border-radius:1em;
+}
 
 
 
@@ -58,7 +71,7 @@ html {
     width: 100%;
     top: 5rem;
     left: 48px;
-    background-color: #ff9776;
+    /* background-color: #efef33; */
     display: none;
     margin: 0;
   }
@@ -66,7 +79,7 @@ html {
   .nav-links a {
     display: block;
     text-align: center;
-    padding: 10px 0;
+    padding: 4px 0;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
@@ -75,7 +88,7 @@ html {
   
   .nav-links a:hover,
   .nav-links a:focus {
-    background-color: #ff9776;
+    background-color: #ffdd23;
   }
   
   .expanded {
