@@ -31,9 +31,11 @@ const pageTitle = "tags n hags";
 
 <BaseLayout pageTitle = {pageTitle}>
 <h2>yeah boy</h2>
-<div class="tags">{tags.map((tag) => (
-    <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-))}
+<div class="tags"> {
+    tags.map((tag) => (
+        <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+    ))
+}
 
 </div>
 </BaseLayout>

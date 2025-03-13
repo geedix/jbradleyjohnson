@@ -8,10 +8,12 @@ export default function Greeting({messages}) {
 
   return (
     <div>
-      <h3>{greeting}</h3>
+      <div className="centerme">
       <button onClick={() => setGreeting(randomMessage())}>
-        See another word forbidden by the current administration!
+        Click me
       </button>
+      </div>
+      <h3>{greeting}</h3>
       <p>Thank you for visiting!</p>
     </div>
   );
