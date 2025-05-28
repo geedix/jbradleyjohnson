@@ -83,7 +83,7 @@ footer a {
 .nav-links {
   width: 100%;
   top: 5rem;
-  left: 48px;
+  /* left: 48px; */
   /* background-color: #efef33; */
   /* display: none; */
   margin: 0;
@@ -94,7 +94,7 @@ footer a {
   text-align: center;
   /* padding: 4px 0; */
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -115,8 +115,9 @@ footer a {
 
 @media screen and (min-width: 636px) {
   .nav-links {
-    margin-left: 5em;
-    display: block;
+    margin: 0;
+    display: flex;
+      justify-content: space-evenly;
     position: static;
     width: auto;
     background: none;
@@ -124,7 +125,7 @@ footer a {
 
   .nav-links a {
     display: inline-block;
-    padding: 15px 20px;
+    padding: 15px ;
   }
 
   .hamburger {

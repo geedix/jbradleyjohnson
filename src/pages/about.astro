@@ -10,13 +10,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 import '../styles/global.css';
 
-const pageTitle = "Sugar Me";
+const pageTitle = "About me";
 
 const identity = {
   firstName: "Brad",
   country: "USA",
   occupation: "web animator",
-  hobbies: ["musician", "bicyclist", "drinker"],
+  hobbies: ["musician", "bicyclist", "cartoonist"],
 };
 
 const skills = ["none, none, none", "none", "sleeping"];
@@ -44,24 +44,12 @@ const skillColor ="fuchsia";
 <BaseLayout pageTitle={pageTitle}>
 
 
-
-    <!-- <h1>{pageTitle}</h1> -->
-    <!-- <h2>I am many things, such as for example, you.</h2> -->
-
-    <p>I get along with people in general. 
-        I have always strived to love everybody. 
-        <!-- As a child, I learned that this is the way our saviour Jesus Christ did things. -->
-      </p>
-
-    <!-- <p>For work I am currently animating 3D cubes for PwC.</p> -->
-    <p>For pleasure, I mostly play music. </p>
-
     <p>Here are a few facts about me:</p>
     <ul>
       <li>My name is {identity.firstName}.</li>
-      <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+      <li>I work as a {identity.occupation}.</li>
       {identity.hobbies.length >= 2 &&
-        <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+        <li>Some of my hobbies are: {identity.hobbies[0]}, {identity.hobbies[1]} and {identity.hobbies[2]}.</li>
       }
     </ul>
     <p>My skills are:</p>

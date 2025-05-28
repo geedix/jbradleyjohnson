@@ -1,0 +1,311 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Greeting from "../components/Greeting";
+// import { ClientRouter } from "astro:transitions";
+const pageTitle = "Contact";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+
+<!--  <script src="https://unpkg.com/imask"></script> -->
+
+<style>
+        
+    .contact-section {
+        width: 100%;
+        max-width: 40rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem;
+    }
+
+    .contact-intro > * + * {
+        margin-top: 1rem;
+    }
+
+    .form-group-container {
+        display: grid;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-label {
+        margin-bottom: 0.5rem;
+    }
+
+    .form-input,
+    .form-textarea {
+        padding: 0.5rem;
+        border: 1px solid #e5e7eb;
+        display: flex;
+        height: 2.5rem;
+        width: 100%;
+        border-radius: 0.375rem;
+        line-height: 1.25rem;
+    }
+
+    .form-input::placeholder,
+    .form-textarea:focus-visible {
+        color: #6b7280;
+    }
+
+    .form-input:focus-visible,
+    .form-textarea:focus-visible {
+        outline: 2px solid #2563eb;
+        outline-offset: 2px;
+    }
+
+    .form-textarea {
+        min-height: 120px;
+    }
+
+    .form-submit {
+        width: 100%;
+        margin-top: 1.2rem;
+        background-color:blue;
+        color: #fff;
+        padding: 13px 5px;
+        border-radius: 0.375rem;
+        border:none;
+    }
+
+
+    /* ///  */
+
+    .invalid-feedback,
+    .empty-feedback {
+        display: none;
+    }
+
+    .was-validated :placeholder-shown:invalid ~ .empty-feedback {
+        display: block;
+    }
+
+    .was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+        display: block;
+    }
+
+    .is-invalid,
+    .was-validated :invalid {
+        border-color: #dc3545;
+    }
+
+
+
+/* /// from tailwind:  */
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+}
+
+.was-validated {
+    color:green;
+}
+
+.text-gray-400 {
+    color:#899;
+}
+
+.text-red-400 {
+    color:red;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.p-5 {
+    padding: 1.25rem;
+}
+.text-center {
+    text-align: center;
+}
+.mb-2 {
+    margin-bottom: .5rem;
+}
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+.m-7 {
+    margin: 1.75rem;
+}
+.my-3 {
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+}
+.w-full {
+    width: 100%;
+}
+.py-2 {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+.px-3 {
+    padding-left: .75rem;
+    padding-right: .75rem;
+}
+.rounded-md {
+    border-radius: .375rem;
+}
+.text-gray-400 {
+    --tw-text-opacity: 1;
+    color: rgba(156, 163, 175, var(--tw-text-opacity));
+}
+.text-red-400 {
+    --tw-text-opacity: 1;
+    color: rgba(248, 113, 113, var(--tw-text-opacity));
+}
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}
+
+</style>
+
+
+<section class="contact-section">
+  <div class="contact-intro">
+    <p>
+      Call or text me at 518-226-1979. 
+    </p>
+    <p>
+      Or, fill out this form and I'll get back to you.
+    </p>
+  </div>
+
+  <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="f9f0f82a-3a23-4650-8a17-dc4868a9f639">
+    <input type="hidden" name="subject" value="contact form " />
+    <input type="hidden" name="from_name" value="from jbradleyjohnson.net" />
+    <!-- More custom ization options available in the docs: https://docs.web3forms.com -->
+
+    <div class="form-group-container">
+      <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" name="name" class="form-input" placeholder="name" type="text" />
+              <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+                Please provide your first name.
+              </div>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" name="email" class="form-input" placeholder="email" type="email" />
+      </div>
+      <div class="form-group">
+        <label for="phone" class="form-label">Phone</label>
+        <input id="phone" name="phone" class="form-input" placeholder="(optional)" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder=""></textarea>
+      </div>
+    </div>
+    <button class="form-submit" type="submit">Send</button>
+    <p id="result" class="text-base text-center text-gray-400" ></p>
+  </form>
+
+
+<script>
+
+(function () {
+  "use strict";
+  /*
+   * Form Validation
+   */
+
+  // Fetch all the forms we want to apply custom validation styles to
+  const forms = document.querySelectorAll("contact-form");
+  const result = document.getElementById("result");
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms).forEach(function (form) {
+    form.addEventListener(
+      "submit",
+      function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+
+          form.querySelectorAll(":invalid")[0].focus();
+        } else {
+          /*
+           * Form Submission using fetch()
+           */
+
+          const formData = new FormData(form);
+          event.preventDefault();
+          event.stopPropagation();
+          const object = {};
+          formData.forEach((value, key) => {
+            object[key] = value;
+          });
+          const json = JSON.stringify(object);
+          result.innerHTML = "Please wait...";
+
+          fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json"
+            },
+            body: json
+          })
+            .then(async (response) => {
+              let json = await response.json();
+              if (response.status == 200) {
+                result.innerHTML = json.message;
+                result.classList.remove("text-gray-400");
+                result.classList.add("text-green-400");
+              } else {
+                console.log(response);
+                result.innerHTML = json.message;
+                result.classList.remove("text-gray-400");
+                result.classList.add("text-red-400");
+              }
+            })
+            .catch((error) => {
+              console.log(error);
+              result.innerHTML = "Something went wrong!";
+            })
+            .then(function () {
+              form.reset();
+              form.classList.remove("was-validated");
+              setTimeout(() => {
+                result.style.display = "none";
+              }, 5000);
+            });
+        }
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  });
+})();
+
+
+</script>
+
+  
+</section>
+
+
+</BaseLayout>
+
