@@ -16,7 +16,7 @@ const identity = {
   firstName: "Brad",
   country: "USA",
   occupation: "web animator",
-  hobbies: ["musician", "bicyclist", "cartoonist"],
+  hobbies: ["musician", "bicyclist", "cartoonist", "dog walker"],
 };
 
 const skills = ["none, none, none", "none", "sleeping"];
@@ -49,13 +49,13 @@ const skillColor ="fuchsia";
       <li>My name is {identity.firstName}.</li>
       <li>I work as a {identity.occupation}.</li>
       {identity.hobbies.length >= 2 &&
-        <li>Some of my hobbies are: {identity.hobbies[0]}, {identity.hobbies[1]} and {identity.hobbies[2]}.</li>
+        <li>Some of my hobbies are: {identity.hobbies[0]}, {identity.hobbies[1]}, {identity.hobbies[2]} and {identity.hobbies[3]}.</li>
       }
     </ul>
-    <p>My skills are:</p>
+    <!-- <p>My skills are:</p>
     <ul>
       {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
+    </ul> -->
 
 
     
