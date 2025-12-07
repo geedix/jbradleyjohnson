@@ -12,11 +12,18 @@ html.dark {
 body {
   margin: 0 auto;
   width: 100%;
-  max-width: 60ch;
   padding: 1rem;
   line-height: 1.8;
   color: blue;
 }
+.ctrstuff{
+  max-width: 60ch;
+}
+.widestuff{
+  max-width: 97%;
+  margin:1.5em;
+}
+
 
 * {
   box-sizing: border-box;
