@@ -7,31 +7,16 @@ const fontWeight = "bold";
 const textCase = "uppercase";
 const skillColor ="fuchsia";
 ---
-<style is:global define:vars={{skillColor, fontWeight, textCase}}>
+<!-- <style is:global define:vars={{skillColor, fontWeight, textCase}}> -->
 
 
-        @font-face{ 
-            font-family: 'testjbja';
-            src: url('.https://www.jbradleyjohnson.net/fonts/testjbjb.eot');
-            src: url('https://www.jbradleyjohnson.net/fonts/testjbjb.eot');
 
-            src: url('https://www.jbradleyjohnson.net/fonts/testjbjb-webfont.woff') format('woff'),
-                 url('https://www.jbradleyjohnson.net/fonts/testjbjb.ttf') format('truetype'),
-                 url('https://www.jbradleyjohnson.net/fonts/testjbjb.svg#webfont') format('svg');
-        }
-
-
+<!-- 
         body{
             margin:30px auto;
             padding:0;
         }
-        h1, h2, h3{
-            font-family: 'testjbja', monospace;
-            text-transform: uppercase;
-            letter-spacing: .1em;
-            color:deepskyblue;
-            font-size: 40px;
-        }
+
         .grid { 
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
@@ -48,13 +33,14 @@ const skillColor ="fuchsia";
             padding-bottom: 100%;
             display: block;
         }
-        </style>
+        </style> -->
 
 
 <WideLayout pageTitle={pageTitle}>
 
-    <h1> “Just Married” sketches</h1>
-    <main class="grid">
+    <section>
+
+    <main class="coupgrid">
 
         <picture>
             <source srcset="/webp/IMG_6744.webp" type="image/webp">
@@ -442,7 +428,7 @@ const skillColor ="fuchsia";
         </picture>
 
 
-
+</section>
 
 
 

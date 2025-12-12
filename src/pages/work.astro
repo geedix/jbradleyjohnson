@@ -1,0 +1,113 @@
+---
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {gsap} from "gsap";
+// import { SplitText } from "gsap/SplitText";
+// import Navigation from '../components/Navigation.astro';
+// import Footer from '../components/Footer.astro';
+// import Header from '../components/Header.astro';
+
+
+import '../styles/global.css';
+
+const pageTitle = "web animation work";
+
+const skills = ["none, none, none", "none", "sleeping"];
+
+const happy = true;
+const finished = true;
+const goal = 3;
+
+
+const fontWeight = "bold";
+const textCase = "uppercase";
+// const chars = document.querySelectorAll(".text");
+const jbjtl = gsap.timeline();
+// gsap.registerPlugin(SplitText);
+
+
+
+const { pathname } = Astro.url;
+console.log("pathname is: ", pathname);
+
+
+// const chars = new SplitText(".navlinks a", {type: "chars"});
+// let chars = SplitText.create(".navlinks a");
+// jbjtl.from(chars, {opacity: 1, scale: 0, ease: "sine", delay: 0.25})
+//     .to("h1", {
+//         "--ital": 10,
+//         duration: .9,
+//         ease: "sine.inOut",
+//         stagger: {
+//             yoyo: true,
+//             each: 0.1,
+//             repeat: -1
+//         }
+//     }, 1);
+---
+
+<style is:global define:vars={{fontWeight, textCase}}>
+
+    .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+    }
+</style>
+<BaseLayout pageTitle={pageTitle}>
+
+
+  
+
+  <!-- <p class="codepen" data-height="600" data-default-tab="result" data-slug-hash="wBKRdEL" 
+  data-pen-title="waterarch-dots-byEase" data-user="geedix" data-token="97950bc3ddc1e387f448dd6eb62a3cf3" 
+  style="height: 600px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/geedix/pen/wBKRdEL/97950bc3ddc1e387f448dd6eb62a3cf3">
+  waterarch-dots-byEase</a> by J Bradley Johnson (<a href="https://codepen.io/geedix">@geedix</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://public.codepenassets.com/embed/index.js"></script>
+
+    -->
+    <!-- <p><a href="/couples/">Couples Drawings</a></p> -->
+    <!-- <p>My skills are:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul> -->
+
+
+<section>
+    <p>
+      I make animations and interactive doodads for web sites. My tools are mainly javascript, CSS, pen and paper.
+    </p>
+    <p>I worked for many years at <a href="https://www.akqa.com/studios/san-francisco/">AKQA in San Francisco</a>.</p>
+    <p>More recently, I was animating things for <a href="https://www.pwc.com/us/en/tech-effect/cloud/cloud-ai-business-survey.html">PwC's US site</a>.
+
+    They recently had a rebrand that removed most of my animations, but here's some of my work that is still live on their site:</p>
+<ul>
+    <li><a href="https://www.pwc.com/us/en/tech-effect/cloud/cloud-ai-business-survey.html">PwC Cloud and AI survey</a> - hero animation</li>
+    <li><a href="https://www.pwc.com/us/en/tech-effect/ai-analytics/generative-ai-impact-on-business.html">Gen AI: arch</a> - hero design and animation</li>
+    <li><a href="https://www.pwc.com/us/en/tech-effect/ai-analytics/six-generative-ai-business-myths.html">Gen AI: triangle</a> - hero design and animation</li>
+        <li>
+        <a href="https://www.pwc.com/us/en/tech-effect/emerging-tech/demystifying-the-metaverse.html">
+          Demystifying the Metaverse</a> - hero animation.
+      </li>
+      <li>
+        <a href="https://www.pwc.com/us/en/tech-effect/emerging-tech/5g-monetization.html">5G Monetization</a> - hero animation.
+      </li>
+      <li>
+        <a href="https://www.pwc.com/us/en/tech-effect/emerging-tech/microsoft-transforms-gameday-experience.html">PwC/Microsoft Gameday</a> - hero and divider animations.
+      </li>
+
+  </ul>
+
+
+
+
+</section>
+</BaseLayout>  
+
+
+
+  </body>
+</html>
