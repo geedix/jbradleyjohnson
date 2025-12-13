@@ -130,6 +130,13 @@ footer a {
   border-radius: 5px;
 }
 
+.mylogo{
+  width:220px;
+  position:absolute;
+  top: 20px;
+  left: 20px;
+}
+
 .prostyle{
   font-family: "Whirly Birdie", "futura", sans-serif;
 }
