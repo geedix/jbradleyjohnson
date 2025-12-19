@@ -10,3 +10,17 @@
     <a href="/contact/">Contact</a>
     <!-- <a href="/tags/">Tags</a> -->
 </div>
+
+<script is:inline>
+    document.addEventListener("astro:page-load", () => {
+        const hamburger = document.querySelector(".hamburger");
+        const navlinks = document.querySelector(".nav-links");
+
+        if (hamburger && navlinks) {
+            hamburger.addEventListener("click", () => {
+                // navlinks.classList.toggle("expanded");
+                console.log("inline heard a click");
+            });
+        }
+    });
+</script>

@@ -51,19 +51,8 @@ body {
   line-height: 1.8;
   color: blue;
   min-height: 100vh;
-  /* background-image: url('/goldstripes32.png'); */
-  /* background-image: url('/waves32.png'); */
-  /* background-image: url('/bar34.png'); */
-  /* background-image: url('/twopaths34v2.png'); */
-  /* background-image: url('/svg300x100.svg'); */
   background-image: url('/oneoverlappingpath.svg');
-  /* background-size: 100vw 100vh; */
   background-size: cover;
-  /* background-size:17px 17px; */
-
-  /* background-image: url("data:image/svg+xml,%3Csvg width='16px' height='16px' viewBox='4 4 8 8' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-miterlimit:1.5;'%3E%3Crect x='-0' y='0' width='16' height='16' style='fill:rgb(255,238,0);'/%3E%3Cpath d='M-0,0L16,8' style='fill:none;stroke:rgb(0,14,247);stroke-width:2px;'/%3E%3Cpath d='M0,8L16,16' style='fill:none;stroke:rgb(0,14,247);stroke-width:2px;'/%3E%3C/svg%3E"); */
-
-  /* background-image: url("data:image/svg+xml,%3Csvg width='32px' height='32px' viewBox='1 1 32 32' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-miterlimit:1.5;'%3E%3Cg transform='matrix(2.125,0,0,2.125,0,0)'%3E%3Crect x='-0' y='0' width='16' height='16' style='fill:%23fe0;'/%3E%3C/g%3E%3Cg transform='matrix(2.125,0,0,2.125,0,0)'%3E%3Cpath d='M0,0L16,16' style='fill:none;stroke:%23000ef7;stroke-width:3.76px;'/%3E%3C/g%3E%3C/svg%3E"); */
   background-repeat: repeat;
 }
 
@@ -74,7 +63,7 @@ body {
 }
 
 h1 {
-  margin: 1rem 0;
+  margin: 3rem 0 0 0;
   font-size: 2rem;
   display: inline-flex;
   padding: 0 1rem;
@@ -231,7 +220,12 @@ footer a {
   display: flex;
   flex-direction: column;
   max-width: fit-content;
-  margin:10px auto
+  margin:10px auto;
+   /* transform: translateX(-100%); */
+  transition: transform 0.3s ease;
+}
+.nav-links.expanded a {
+    border: 5px solid var(--main-bg-color);
 }
 
 .centerme {

@@ -1,33 +1,18 @@
 ---
+import Hamburger from "./Hamburger.astro";
+import Navigation from "./Navigation.astro";
 
-import Hamburger from './Hamburger.astro';
-import Navigation from './Navigation.astro';
-import { ClientRouter } from "astro:transitions";
 // import ThemeIcon from './ThemeIcon.astro';
 const pathname = Astro.url.pathname;
-console.log("bob "+pathname);
+console.log("bob " + pathname);
 ---
 
 <header>
     <a href="/" class="skip-link">
-    <img class="mylogo" src="/jbj_logov2.svg" alt="JBJ logo" /></a>
+        <img class="mylogo" src="/jbj_logov2.svg" alt="JBJ logo" /></a>
     <nav class="centerstuff">
-        <Hamburger />
+        <Hamburger transition:animate="slide" />
         <!-- <ThemeIcon /> -->
         <Navigation />
     </nav>
 </header>
-<script is:inline>
-    document.addEventListener('astro:page-load', () => {
-  const hamburger = document.querySelector(".hamburger");
-  const navlinks = document.querySelector(".nav-links");
-
-  if (hamburger && navlinks) {
-    hamburger.addEventListener("click", () => {
-        navlinks.classList.toggle('expanded');
-        console.log('inlin script toggled menu');
-    });
-  }
-});
-
-</script>
