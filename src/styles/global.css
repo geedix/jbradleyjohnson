@@ -162,23 +162,38 @@ footer a {
 
 .hamburger .line {
   display: block;
+  opacity:1;
   width: 30px;
   height: 2px;
   margin-bottom: 8px;
   background-color: var(--myblue);
 }
 
+.is-active{
+  /* transform: rotate(90deg); */
+  transition: transform 0.3s ease;
+}
+#line1.is-active{
+  transform: rotate(45deg) translate(0, 15px);
+}
+#line2.is-active{
+  opacity: 0;
+}
+#line3.is-active{
+  transform: rotate(-45deg) translate(0, -15px);
+}
+
 .nav-links {
   display: none;
+  
   width: 100%;
   top: 3rem;
   max-width: 50ch;
   margin: 0 auto;
   /* border: 2px solid var(--myblue); */
-  /* background: var(--main-bg-color); */
-  background: var(--mygold);
-
-  border-radius: 1em;
+  background: var(--main-bg-color);
+    transform: translateY(-250px);
+  /* background: var(--mygold); */
 }
 
 .nav-links a {
@@ -189,15 +204,12 @@ footer a {
   padding: 0.2rem 0.8rem;
   font-weight: bold;
   text-transform: uppercase;
-
+  border-radius:12px;
   font-family: "Whirly Birdie";
   font-variation-settings: "wght" 60, "wdth" 80, "ital" 0;
   background-color: var(--mygold);
-
-  /* border-radius: 0.5em; */
-  color: var(--myblue);
+  color: var(--myblue); 
   transition: all 0.2s ease-in-out;
-  /* color: #0099ff; */
 
 }
 
@@ -224,8 +236,13 @@ footer a {
    /* transform: translateX(-100%); */
   transition: transform 0.3s ease;
 }
+.nav-links.expanded{
+  transform: translateY(0);
+}
+
 .nav-links.expanded a {
     border: 5px solid var(--main-bg-color);
+    transform: translateY(0);
 }
 
 .centerme {
@@ -283,6 +300,10 @@ footer a {
   border-radius: 50%;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 @keyframes hueman {
   0% {
     filter: hue-rotate(0deg)
@@ -300,8 +321,9 @@ footer a {
 
 @media screen and (min-width: 636px) {
   .nav-links {
-    margin: 0 auto;
     display: flex;
+    flex-direction:row;
+    margin: 0 auto;
     justify-content: space-evenly;
     position: static;
     width: auto;
@@ -311,6 +333,9 @@ footer a {
   .nav-links a {
     display: inline-block;
     padding: 5px 15px;
+    /* transform: translateY(-250px); */
+
+
   }
 
 
