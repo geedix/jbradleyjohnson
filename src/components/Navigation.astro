@@ -11,7 +11,11 @@
     <!-- <a href="/tags/">Tags</a> -->
 </div>
 
+
+
 <script is:inline>
+    // import { gsap } from "gsap";
+
     document.addEventListener("astro:page-load", () => {
         const hamburger = document.querySelector(".hamburger");
         const navlinks = document.querySelector(".nav-links");
@@ -24,6 +28,8 @@
                 lines.forEach(line => {
                     line.classList.toggle("is-active");
                 }); 
+                
+                // gsap.from(".nav-links a", {y:"-=250", stagger:0.1, duration:0.5, ease:"back.inOut"})
             });
         }
     });

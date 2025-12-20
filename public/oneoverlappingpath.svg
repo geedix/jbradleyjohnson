@@ -11,7 +11,7 @@
                 stroke-dasharray: 22px 400px;
                 stroke-dashoffset: 0;
                 stroke-linecap: round;
-                animation: dash 30s linear infinite;
+                animation: dash 20s linear infinite;
                 fill:none;
                 shape-rendering: crispEdges;
             }

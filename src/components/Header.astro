@@ -2,6 +2,7 @@
 import Hamburger from "./Hamburger.astro";
 import Navigation from "./Navigation.astro";
 
+
 // import ThemeIcon from './ThemeIcon.astro';
 const pathname = Astro.url.pathname;
 console.log("bob " + pathname);
@@ -11,7 +12,8 @@ console.log("bob " + pathname);
     <a href="/" class="skip-link">
         <img class="mylogo" src="/jbj_logov2.svg" alt="JBJ logo" /></a>
     <nav class="centerstuff">
-        <Hamburger transition:animate="slide" />
+        <!-- <Hamburger transition:animate="slide" /> -->
+        <Hamburger />
         <!-- <ThemeIcon /> -->
         <Navigation />
     </nav>
