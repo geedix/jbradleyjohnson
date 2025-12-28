@@ -298,6 +298,12 @@ footer a {
   border-radius: 50%;
 }
 
+.downr {
+    position: fixed;
+    top: 50px;
+    right: 10px;
+}
+
 
 /* // resume animated sig:  */
 .john {
