@@ -66,7 +66,7 @@ const pageTitle = 'resume';
     <h4 id="tagline">CREATIVE DEVELOPER<br />Ballston Spa, NY 12020</h4>
     <div class="downr"><a href="https://jbradleyjohnson.net/J_Bradley_Johnson_resume_Dec2025.pdf">download as pdf</a></div>
     <div class="wrapper">
-      <div class="box" id="main">
+      <div class="box main">
         <h2>Experience:</h2>
         <ul class="startopen" id="mainul">
           <li>
@@ -131,16 +131,9 @@ const pageTitle = 'resume';
           </li> -->
         </ul>
       </div>
-      <div class="box" id="side">
-        <div class="contactme">
-          <h2>Contact:</h2>
-          <p>
 
-            <a href="mailto:bradjohnson@posteo.net">bradjohnson@posteo.net</a>
-            <br />
-            cell: <span class="coolnums">518-226-1979</span>
-          </p>
-        </div>
+      <div class="box side">
+ 
 
         <h2>Skills:</h2>
         <ul id="ul2" class="startopen">
@@ -188,9 +181,12 @@ const pageTitle = 'resume';
 
 </section>
 <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
   <script is:inline>    
 //   import { gsap } from "gsap"; 
-    document.addEventListener("DOMContentLoaded", function (event) {
+    // document.addEventListener("DOMContentLoaded", function (event) {
+(function () {
+
       gsap.set("svg", { opacity: 1 });
       gsap.from("path", 0.1, { strokeDashoffset: 38, stagger:.08 });
       gsap.to("#tagline", 1, { opacity: 1, delay: 0.3 });
@@ -200,9 +196,8 @@ const pageTitle = 'resume';
       gsap.to("#mainul", 0.8, { opacity:1, delay: 0.4 });
       gsap.to("#ul2", 0.8, { opacity:1, delay:0.6 });
       gsap.to(".summary", 0.8, { opacity: 1, delay: 1.4 });
-    });
-    function addborder() {
-      gsap.to("#mainul", 0.5, { css: { className: "hasrightborder" } });
-    }
+
+      }());
+
 
   </script>

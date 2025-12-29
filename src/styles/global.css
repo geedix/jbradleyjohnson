@@ -299,9 +299,18 @@ footer a {
 }
 
 .downr {
-    position: fixed;
+    position: absolute;
     top: 50px;
     right: 10px;
+}
+
+.wrapper{
+  display:flex;
+  flex-direction:column;
+}
+
+.side{
+  margin-left:0;
 }
 
 
@@ -361,6 +370,12 @@ footer a {
      border-radius:1px;
     transform:translateY(0);
   }
+  .wrapper{
+    flex-direction:row;
+  }
+  .side{
+    margin-left: 6em;
+  }
 
 
   .hamburger {
@@ -370,8 +385,8 @@ footer a {
   .mylogo {
     width: 220px;
     position: absolute;
-    top: 80px;
-    left: 20px;
+    top: 62px;
+    left: 36px;
   }
 
   section {
