@@ -1,14 +1,12 @@
 ---
-
-import BaseLayout from '../layouts/BaseLayout.astro';
-import {gsap} from "gsap";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { gsap } from "gsap";
 // import { SplitText } from "gsap/SplitText";
 // import Navigation from '../components/Navigation.astro';
 // import Footer from '../components/Footer.astro';
 // import Header from '../components/Header.astro';
 
-
-import '../styles/global.css';
+import "../styles/global.css";
 
 const pageTitle = "web animation work";
 
@@ -18,18 +16,14 @@ const pageTitle = "web animation work";
 // const finished = true;
 // const goal = 3;
 
-
 // const fontWeight = "bold";
 // const textCase = "uppercase";
 // const chars = document.querySelectorAll(".text");
 // const jbjtl = gsap.timeline();
 // gsap.registerPlugin(SplitText);
 
-
-
 const { pathname } = Astro.url;
 console.log("pathname is: ", pathname);
-
 
 // const chars = new SplitText(".navlinks a", {type: "chars"});
 // let chars = SplitText.create(".navlinks a");
@@ -55,10 +49,6 @@ console.log("pathname is: ", pathname);
     }
 </style> -->
 <BaseLayout pageTitle={pageTitle}>
-
-
-  
-
   <!-- <p class="codepen" data-height="600" data-default-tab="result" data-slug-hash="wBKRdEL" 
   data-pen-title="waterarch-dots-byEase" data-user="geedix" data-token="97950bc3ddc1e387f448dd6eb62a3cf3" 
   style="height: 600px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
@@ -69,51 +59,53 @@ console.log("pathname is: ", pathname);
       <script async src="https://public.codepenassets.com/embed/index.js"></script>
 
     -->
-    <!-- <p><a href="/couples/">Couples Drawings</a></p> -->
-    <!-- <p>My skills are:</p>
+  <!-- <p><a href="/couples/">Couples Drawings</a></p> -->
+  <!-- <p>My skills are:</p>
     <ul>
       {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul> -->
 
-
-<section>
+  <section>
     <p>
-      I make animations and interactive graphics for web sites. My tools are mainly javascript, CSS, pen and paper.
+      I make animations and interactive graphics for web sites. My tools are
+      mainly javascript, CSS, pen and paper.
     </p>
     <!-- <p>I worked for many years at <a href="https://www.akqa.com/studios/san-francisco/">AKQA in San Francisco</a>.</p> -->
     <!-- <p>More recently, I was animating things for <a href="https://www.pwc.com/us/en/tech-effect/cloud/cloud-ai-business-survey.html">PwC's US site</a>. -->
-<p>
-    <!-- In San Francisco, I worked for <a href="https://www.lastgasp.com/">Last Gasp</a> and later <a href="https://www.akqa.com/studios/san-francisco/">AKQA</a>. After moving east, I freelanced for a while, then worked remotely for PwC. -->
-     I've had a long career, most recently working for PricewaterhouseCoopers as an animation specialist.
-    Some of my animations still appear on the PwC site:</p>
-<ul>
-    <li><a href="https://www.pwc.com/us/en/tech-effect/cloud/cloud-ai-business-survey.html">PwC Cloud and AI survey</a> - hero animation</li>
-    <li><a href="https://www.pwc.com/us/en/tech-effect/ai-analytics/generative-ai-impact-on-business.html">Gen AI: arch</a> - hero design and animation</li>
-    <li><a href="https://www.pwc.com/us/en/tech-effect/ai-analytics/six-generative-ai-business-myths.html">Gen AI: triangle</a> - hero design and animation</li>
-        <li>
+    <p>
+      
+      I was with AKQA in San Francisco for a long time. Most recently, I was animating for PwC’s internal web team (which no longer exists). Here are a few of my animations that continue to live on the PwC site:
+    </p>
+    <ul>
+      <li>
+        <a
+          href="https://www.pwc.com/us/en/tech-effect/cloud/cloud-ai-business-survey.html"
+          >PwC Cloud and AI survey</a> - hero animation
+      </li>
+      <!-- <li>
+        <a
+          href="https://www.pwc.com/us/en/tech-effect/ai-analytics/generative-ai-impact-on-business.html"
+          >Gen AI: arch</a> - hero design and animation
+      </li>
+      <li>
+        <a
+          href="https://www.pwc.com/us/en/tech-effect/ai-analytics/six-generative-ai-business-myths.html"
+          >Gen AI: triangle</a> - hero design and animation
+      </li> -->
+      <li>
         <a href="https://www.pwc.com/us/en/tech-effect/emerging-tech/demystifying-the-metaverse.html">
-          Demystifying the Metaverse</a> - hero animation.
+          Demystifying the Metaverse</a> - hero animation
       </li>
       <li>
-        <a href="https://www.pwc.com/us/en/tech-effect/emerging-tech/5g-monetization.html">5G Monetization</a> - hero animation.
+        <a href="https://www.pwc.com/us/en/tech-effect/emerging-tech/5g-monetization.html">5G Monetization</a> - hero animation
       </li>
       <li>
-        <a href="https://www.pwc.com/us/en/tech-effect/emerging-tech/microsoft-transforms-gameday-experience.html">PwC/Microsoft Gameday</a> - hero and divider animations.
+        <a href="https://www.pwc.com/us/en/tech-effect/emerging-tech/microsoft-transforms-gameday-experience.html">PwC/Microsoft Gameday</a> - hero and divider animations
       </li>
+    </ul>
 
-  </ul>
-
-
-<p>
-
-
-  I'm on <a href="https://codepen.io/collection/NqbPVa">CodePen</a> and <a href="https://www.linkedin.com/in/geedix/">LinkedIn</a>.
-</p>
-
-</section>
-</BaseLayout>  
-
-
-
-  </body>
-</html>
+    <p>
+      I’m on <a href="https://codepen.io/collection/NqbPVa">CodePen</a> and <a href="https://www.linkedin.com/in/geedix/">LinkedIn</a>.
+    </p>
+  </section>
+</BaseLayout>

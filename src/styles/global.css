@@ -324,9 +324,11 @@ footer a {
   display: block;
   opacity: 0;
   stroke:var(--myblue);
-  stroke-width:2;
-  fill:none;
-  stroke-dasharray: 1200;
+  fill:none;  
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  stroke-dasharray: 38;
+  /* stroke-dasharray: 1200; */
 }
 
 @view-transition {
@@ -342,12 +344,12 @@ footer a {
 50% {
     /* filter: sepia(1);
      */
-     filter: hue-rotate(65deg);
+     filter: hue-rotate(-65deg);
   }
 
   100% {
     /* filter: sepia(0); */
-    filter: hue-rotate(-3deg);
+    filter: hue-rotate(3deg);
   }
 }
 
@@ -387,7 +389,13 @@ footer a {
     position: absolute;
     top: 62px;
     left: 36px;
+    /* stroke-dasharray: 22 22; */
+    stroke-dasharray: 38;
+    stroke-dashoffset: 100;
+  fill: none;
+      stroke-linejoin: round;
   }
+
 
   section {
     padding: 4em 1.5em;
