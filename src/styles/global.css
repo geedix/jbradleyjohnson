@@ -135,8 +135,9 @@ footer a {
 .mylogo { 
   width: 220px;
   position: absolute;
-  top: 10px;
-  left: 20px;
+  top: 0;
+  left:unset;
+  right:0;
 }
 
 .prostyle {
@@ -226,7 +227,8 @@ footer a {
   width: 220px;
   position: absolute;
   top: 10px;
-  left: unset;
+  /* left: 1.5em; */
+  left:unset;
   right: 10px;
 }
 
@@ -401,10 +403,8 @@ footer a {
     width: 220px;
     position: absolute;
     top: 62px;
-    left: 36px;
-
-  fill: none;
-      stroke-linejoin: round;
+    left: 1.5em;
+    right:unset;
   }
 
 
