@@ -284,11 +284,11 @@ footer a {
 }
 
 #jbjself {
-  /* float:right; */
   animation-name: hueman;
-  animation-duration: 11s;
+  animation-duration: 9s;
   animation-iteration-count: 3;
   border-radius: 50%;
+  margin: 20px 0;
 }
 
 .downr {
@@ -325,7 +325,6 @@ footer a {
   stroke-dasharray: 38;
 }
 
-
 /* // resume animated sig:  */
 .john {
   position: relative;
@@ -349,19 +348,22 @@ footer a {
 
 @keyframes hueman {
   0% {
-    filter: hue-rotate(0deg)
+    /* filter: hue-rotate(0deg) */
+    filter:contrast(1) hue-rotate(0deg);
     /* filter:sepia(0); */
   }
 
 50% {
     /* filter: sepia(1);
      */
-     filter: hue-rotate(-65deg);
+     /* filter: hue-rotate(-65deg); */
+     filter:contrast(1.5) hue-rotate(-65deg);
   }
 
   100% {
     /* filter: sepia(0); */
-    filter: hue-rotate(3deg);
+    /* filter: hue-rotate(3deg); */
+    filter:contrast(0.96) hue-rotate(3deg);
   }
 }
 
