@@ -5,27 +5,11 @@ import '../styles/global.css';
 
 
 
-const pageTitle = 'resume';
+const pageTitle = 'resumé';
 
 
 ---
 
-<!-- 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="icon" type="image/png" href="faviconb32x32.png" sizes="32x32" />
-  <link rel="icon" type="image/png" href="faviconb16x16.png" sizes="16x16" />
-  <title>J Bradley Johnson</title>
-  <link href="jbjdesign.css" rel="stylesheet" />
-  <link href="resume.css" rel="stylesheet" />
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,500&display=swap" rel="stylesheet" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet" />
-</head> -->
 
 
 <WideLayout pageTitle={pageTitle}>
@@ -180,24 +164,3 @@ const pageTitle = 'resume';
 
 
 </section>
-<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-
-  <script is:inline>    
-//   import { gsap } from "gsap"; 
-    // document.addEventListener("DOMContentLoaded", function (event) {
-(function () {
-
-      gsap.set("svg", { opacity: 1 });
-      gsap.from("path", 0.1, { strokeDashoffset: 38, stagger:.08 });
-      gsap.to("#tagline", 1, { opacity: 1, delay: 0.3 });
-      gsap.to(".contactme", 0.8, { opacity: 1, delay: 0.4 });
-      gsap.from("h2", 0.8, { opacity: 0, delay: 0.4, stagger:0.1 });
-      gsap.from("li", 1.1, { opacity: 0, delay: 0.4, stagger:0.1, onComplete: addborder });
-      gsap.to("#mainul", 0.8, { opacity:1, delay: 0.4 });
-      gsap.to("#ul2", 0.8, { opacity:1, delay:0.6 });
-      gsap.to(".summary", 0.8, { opacity: 1, delay: 1.4 });
-
-      }());
-
-
-  </script>
