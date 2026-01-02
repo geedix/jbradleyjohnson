@@ -255,7 +255,7 @@ footer a {
   border: 2px dashed var(--myblue);
   border-radius: 1em;
   text-align: center;
-  margin: 0 auto;
+  margin: 1em auto;
   padding-top: 2em;
 }
 
@@ -263,13 +263,6 @@ footer a {
   width: 100%;
   height: auto;
 }
-
-/* couples wide  */
-
-/* body{
-            margin:30px auto;
-            padding:0;
-        } */
 
 .coupgrid {
   display: grid;
@@ -311,6 +304,25 @@ footer a {
 
 .side{
   margin-left:0;
+}
+
+.jbsig {
+  max-width: 300px;
+  height: auto;
+  display: block;
+  /* opacity: 0; */
+  position: relative;
+  position:absolute;
+}
+
+#jbjsig path {
+  fill: none;
+  stroke-linejoin: round;
+  /* stroke: #D95252; */
+  stroke:var(--myblue);
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  stroke-dasharray: 38;
 }
 
 
@@ -379,7 +391,6 @@ footer a {
     margin-left: 6em;
   }
 
-
   .hamburger {
     display: none;
   }
@@ -389,9 +400,7 @@ footer a {
     position: absolute;
     top: 62px;
     left: 36px;
-    /* stroke-dasharray: 22 22; */
-    stroke-dasharray: 38;
-    stroke-dashoffset: 100;
+
   fill: none;
       stroke-linejoin: round;
   }

@@ -10,7 +10,38 @@ import gsap from "gsap";
 
 <header>
     <a href="/" class="skip-link">
-        <img class="mylogo" src="/jbj_logov2.svg" alt="JBJ logo" />
+<div class="whozit mylogo">
+
+<svg class="jbsig" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 202 65">
+  <g id="jbjsig">
+  <path d="M23.5 29.2s.3 11.7-3.8 11.5c-3-.2-2.4-3.3-2.4-3.3"/>
+  <path d="M33.1 30.7s1.4-1.3 2.9-1.5c2.5-.2 4.1 2.2 3.8 3.8q-.4 1.5-1.4 2c-1.2.7-2.7.6-2.4.6 0 0 2.6.8 2.3 2.4-.3 2.2-1.5 2.5-2.6 2.6a21 21 0 0 1-4.2-.7l1.7.4"/>
+  <path d="M35 32.4q-1.9 3.1-2 6.1"/>
+  <path d="M43.6 41.5c.9-1.7 1.9-4.2 2-7.1.1-2.2-.7-3.4-.7-3.4l-.2.2c.3.7 2.4-.6 3.7-.5 1.5.1 2.7 1.2 2.6 2.6-.1 1-.8 2.7-1.6 3.1-1.5.7-4.9-.3-4.9-.3l4.3.6s-.2 2.2.5 3 2.2 1.2 2.2 1.2"/>
+  <path d="M55 39c1-2 2-4.3 2.5-6s3.8-5 3.8-5 .3 3.9.7 4.9.7 4 0 6.1"/>
+  <path d="M56.5 34.5c1.9-.4 4.5.7 6.5 0"/>
+  <path d="M68.5 30a18 18 0 0 0-.5 6.5"/>
+  <path d="M66.7 29.3s5.4-.6 6.1.7c.7 1.1.7 3.5-.3 5.3-.9 1.5-4 2.1-4.4 2.2q-.6.2-.5.3l.5-.4"/>
+  <path d="M80.5 28S79 31.9 79 33s-.9 3.3-1.4 3.7-1.2.3-1.2.3 4 1 5.7 1q1-.1 1.1-.2"/>
+  <path d="M92.5 37.7s-4.7.3-5.3.1 0-2.9.3-4 .4-4.2 1.6-4.8 4 1 4 1"/>
+  <path d="M86.7 33.1a14 14 0 0 0 4.4.8"/>
+  <path d="M97.3 28.5s-.2 1.4.4 2.9a5 5 0 0 0 1.6 2.2s1.1-1 1.6-1.8l1.6-2.9"/>
+  <path d="M99.4 33.8s.2 2-.2 2.9l-.8 2.3"/>
+  <path d="M118.3 29.2s-1.2 2.5-1.4 4.7c-.1 1-.2 5.7-1.2 6.5-1.3 1.1-2.6.5-3.4-.2s-.7-2.1-.7-2.5"/>
+  <path d="M124.1 31.9c-1.1 0-2.9 1.9-3.1 3.6-.1 1.6 1.1 4.1 2.6 4.2s4.4-.6 4.6-2.9-1.1-3.9-1.8-4.2-2.6-.5-2.6-.5"/>
+  <path d="M134.6 31.2s-1.1 3.3-1.3 4.7l-1 4.7"/>
+  <path d="M139.1 31.3s-1.2 4-1.2 4.7l-.6 5"/>
+  <path d="M134 36.3s1.2-.3 1.9-.3l2.8.1"/>
+  <path d="M142.2 40s.2-7.5 2.8-7.8 1.7 6.8 3.4 6.8 2.7-2.9 2.9-3.9c.3-1.1.2-3.5.2-3.5"/>
+  <path d="M161.5 32s-3-1-4.8 1.6c-2.1 3.1 2.5 3.3 1.1 6.4-.6 1.4-3.9.8-3.9.8"/>
+  <path d="M165.5 34.7c-1.2.7-2.3 2-1.5 3.8s2.8 2.3 3.7 1.7 2-1.5 2-2.7c.1-1.5-.4-2-1.3-2.6s-2.2-.2-2.2-.2"/>
+  <path d="M173.1 40.1s.3-5.5 1.6-6.1c2.4-1.2 3.1 2.6 3.9 4.3.6 1.2 2.1 1.8 2.6 1.2.9-1.1 1-5.7 1.8-6.4"/>
+</g>
+</svg>
+    
+  </div>
+
+
     </a>
 
 
@@ -23,10 +54,23 @@ import gsap from "gsap";
     </nav>
 
     <script is:inline>
-// gsap.from(".mylogo", {strokeDasharray:0})
-   gsap.set("svg", { opacity: 1 });
+   
+//    gsap.set("svg", { opacity: 1 });
+//       gsap.from("path", { strokeDashoffset: 38, duration: 0.22, ease: "none", stagger: 0.6 }, 0.08);
+   
+   document.addEventListener("DOMContentLoaded", function (event) {
+    //   console.log("Dom ready.");
+
+
+    const jbjtl = gsap.timeline({paused:true});
+      jbjtl.set("svg", { opacity: 1 });
       // gsap.set("#rcirc", { scale: 1.3 });
-      gsap.from("path", { strokeDashoffset: 38, duration: 0.6, ease: "none", stagger: 0.6 }, 0.08);
-    </script>   
+      jbjtl.from("path", { strokeDashoffset: 38, duration: 0.23, ease: "none", stagger: 0.18 });
+
+      
+      gsap.to(jbjtl, {progress:1, duration:6.4, ease:"sine.out"})
+    });
+   
+   </script>   
 
 </header>
