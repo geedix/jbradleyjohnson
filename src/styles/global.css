@@ -287,8 +287,8 @@ footer a {
 
 #jbjself {
   animation-name: hueman;
-  animation-duration: 9s;
-  animation-iteration-count: 3;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
   border-radius: 50%;
   margin: 20px 0;
 }
@@ -359,7 +359,7 @@ footer a {
     /* filter: sepia(1);
      */
      /* filter: hue-rotate(-65deg); */
-     filter:contrast(1.5) hue-rotate(-65deg);
+     filter:contrast(9.5) hue-rotate(-65deg);
   }
 
   100% {

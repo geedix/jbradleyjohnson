@@ -1,6 +1,31 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { gsap } from "gsap";
+// import { Flip } from "gsap/all";
+// gsap.registerPlugin("Flip");
+
+// import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
+// import ScrollTrigger from "gsap/dist/ScrollTrigger";
+// import { CustomEase } from "gsap/dist/CustomEase"
+// import { CustomEase } from "gsap/dist/CustomEase";
+
+// import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { CustomEase } from "gsap/CustomEase";
+
+// const { CustomEase } = await import("gsap/CustomEase");
+
+// gsap.registerPlugin(CustomEase);
+
+// if (typeof window !== "undefined") {
+//   gsap.registerPlugin(ScrollTrigger);
+//   gsap.registerPlugin(CustomEase);
+// }
+// gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(CustomEase);
+
+
 // import { SplitText } from "gsap/SplitText";
 // import Navigation from '../components/Navigation.astro';
 // import Footer from '../components/Footer.astro';
@@ -10,34 +35,9 @@ import "../styles/global.css";
 
 const pageTitle = "web animation work";
 
-// const skills = ["none, none, none", "none", "sleeping"];
 
-// const happy = true;
-// const finished = true;
-// const goal = 3;
 
-// const fontWeight = "bold";
-// const textCase = "uppercase";
-// const chars = document.querySelectorAll(".text");
-// const jbjtl = gsap.timeline();
-// gsap.registerPlugin(SplitText);
 
-const { pathname } = Astro.url;
-console.log("pathname is: ", pathname);
-
-// const chars = new SplitText(".navlinks a", {type: "chars"});
-// let chars = SplitText.create(".navlinks a");
-// jbjtl.from(chars, {opacity: 1, scale: 0, ease: "sine", delay: 0.25})
-//     .to("h1", {
-//         "--ital": 10,
-//         duration: .9,
-//         ease: "sine.inOut",
-//         stagger: {
-//             yoyo: true,
-//             each: 0.1,
-//             repeat: -1
-//         }
-//     }, 1);
 ---
 
 <!-- <style is:global define:vars={{fontWeight, textCase}}>
@@ -49,29 +49,85 @@ console.log("pathname is: ", pathname);
     }
 </style> -->
 <BaseLayout pageTitle={pageTitle}>
-  <!-- <p class="codepen" data-height="600" data-default-tab="result" data-slug-hash="wBKRdEL" 
-  data-pen-title="waterarch-dots-byEase" data-user="geedix" data-token="97950bc3ddc1e387f448dd6eb62a3cf3" 
-  style="height: 600px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-      <span>See the Pen <a href="https://codepen.io/geedix/pen/wBKRdEL/97950bc3ddc1e387f448dd6eb62a3cf3">
-  waterarch-dots-byEase</a> by J Bradley Johnson (<a href="https://codepen.io/geedix">@geedix</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-      </p>
-      <script async src="https://public.codepenassets.com/embed/index.js"></script>
-
-    -->
+  
   <!-- <p><a href="/couples/">Couples Drawings</a></p> -->
-  <!-- <p>My skills are:</p>
-    <ul>
-      {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul> -->
 
+  
   <section>
     <p>
-      I make animations and interactive graphics for web sites. My tools are
-      mainly javascript, CSS, pen and paper.
+      I make animations and interactive graphics for web sites. 
     </p>
-    <!-- <p>I worked for many years at <a href="https://www.akqa.com/studios/san-francisco/">AKQA in San Francisco</a>.</p> -->
-    <!-- <p>More recently, I was animating things for <a href="https://www.pwc.com/us/en/tech-effect/cloud/cloud-ai-business-survey.html">PwC's US site</a>. -->
+
+<div class="holdsvg">
+  <!-- <svg id="archsvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 650" preserveAspectRatio="xMaxYMax meet" role="img"> -->
+  <svg id="archsvg" xmlns="http://www.w3.org/2000/svg" viewBox="300 118 1300 540" preserveAspectRatio="xMaxYMid slice" role="img">
+
+    <defs>
+      <circle id="dot" cx="0" cy="0" r="5" />
+
+      <style>
+        .holdsvg {
+  width: 100%;
+  overflow: hidden;
+  max-height: 700px;
+  display: flex;
+  flex-direction: row-reverse;
+  background-color:#000;
+}
+
+.yedot {
+  fill: #ffb600;
+}
+
+.redot {
+  fill: #e0301e;
+}
+
+.rodot {
+  fill: #d93954;
+}
+
+#archsvg {
+  width: 100%;
+  max-width: 1600px;
+  overflow: visible;
+}
+
+.b4 {
+  visibility: hidden;
+}
+
+.oversvg{
+  fill:#fff;
+font-family:'Georgia', monospace;
+font-size:20px;
+max-width:300px;
+letter-spacing:0.03em;
+}
+      </style>
+
+    </defs>
+
+
+     <text x="140" y="235" class="oversvg">
+      I built a bunch of these dot animations for PwC.  
+    </text>
+   <text x="140" y="265" class="oversvg">
+    I’m not responsible for the concept of dots animating 
+    </text>
+    <text x="140" y="295" class="oversvg">
+      from random piles into organized shapes, but I 
+    </text>
+    <text x="140" y="325" class="oversvg">
+      enjoyed designing many variations on the theme,
+    </text>
+    <text x="140" y="355" class="oversvg">such as this one.
+  </text>
+  </svg>
+
+</div>
+
+
     <p>
       
       I was with AKQA in San Francisco for a long time. Most recently, I was animating for PwC’s internal web team (which no longer exists). Here are a few of my animations that continue to live on the PwC site:
@@ -107,5 +163,150 @@ console.log("pathname is: ", pathname);
     <p>
       I’m on <a href="https://codepen.io/collection/NqbPVa">CodePen</a> and <a href="https://www.linkedin.com/in/geedix/">LinkedIn</a>.
     </p>
+
+    <!-- <script type="module">
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { CustomEase } from "gsap/CustomEase";
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(CustomEase);
+
+    </script> -->
+
+   <script is:inline>
+    // const { CustomEase } = await import("gsap/CustomEase");
+// gsap.registerPlugin(CustomEase);
+// console.clear();
+    (function () {
+ console.log("using GSAP: ", gsap.version);
+//  console.log("")
+//  console.log(ScrollTrigger);
+
+      // gsap.registerPlugin(ScrollTrigger);
+
+      // CustomEase.create("tubease", "M0,0 C0,0 0.3,1 0.5,1 0.7,1 1,0.012 1,0");
+const tubease = "back.inOut(22)";
+      const dot = document.getElementById("dot"),
+        archsvg = document.getElementById("archsvg"),
+        phant = document.getElementById("phant"),
+        maintl = gsap.timeline({ repeat: 2, yoyo: true, paused: false, repeatDelay: 1.2 }),
+        xlocs = [944.8, 963.7, 982.5, 1001.4, 1020.3, 1039.1, 1058.0, 1076.9, 1095.7, 1114.6, 1133.5, 1152.3, 1171.2],
+        numrows = 68,
+        numcols = 13,
+        meanx = 1080,
+        tl1 = gsap.timeline({ paused: true }),
+        ra = gsap.utils.random,
+        orand = () => ra(-1.4, 0.9),
+        // xrand = () => ra(900, 1390),
+        srand = () => ra(0.26, 0.86),
+        crand = () => ra(-10, 10),
+        yrand = () => ra(-260,-8),
+        rotra = () => ra(-10, 10),
+        colrs = ["redot", "redot", "redot", "yedot", "yedot", "yedot", "yedot", "rodot", "rodot", "rodot", "redot", "redot", "redot"],
+        xwrap = gsap.utils.wrap(xlocs),
+        aMatchMedia = window.matchMedia('(prefers-reduced-motion)');
+
+      const normrand = function () {
+        var u = 0,
+          v = 0;
+        while (u === 0) u = Math.random(); //Converting [0,1) to (0,1)
+        while (v === 0) v = Math.random();
+        return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+      }
+
+      let dotcount = 0,
+        xspots = [];
+
+      for (let i = 1; i < numrows + 1; i++) {  //  row times, make batch of 13 in horiz group
+        const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        group.setAttribute('class', 'grp');
+        group.setAttribute('opacity', '0.76');
+
+        if (i < 10) {
+          group.setAttribute('id', 'g0' + i);
+          // bggrp.setAttribute('id', 'p0' + i);
+        }
+        else {
+          group.setAttribute('id', 'g' + i);
+        }
+        makeDots(group);
+        archsvg.appendChild(group);
+      }
+
+       console.log("dots, spots:" + dotcount + ", " + xspots);
+
+      tl1.set(".grp", { y: 664 })
+
+        .set(".b4", { x: (eindex) => xspots[eindex], y: yrand, scale: srand, opacity: orand, visibility: "visible" }, "<.1")
+
+        .to(".grp", { y: "-=544", duration: 25, ease: "tubease", stagger: -0.36 }, "<1")  // ease just needs to be out - in?
+
+        // ease of this x tween creates the shape of the arc
+        .to(".grp", { x: "+=340", opacity: 1, duration: 24, ease: "power1.inOut", stagger: -0.36 }, "<")
+        .to(".b4", { x: xwrap, duration: 11, ease: "power1.inOut", stagger: { each: -0.012, from: "random" } }, "<0.2")
+        .to(".rodot", { y: 0, opacity: 1, duration: 7, ease: "back.inOut(0.5)", stagger: -0.02 }, "<2")
+        .to(".yedot", { y: 0, opacity: 1, duration: 7, ease: "power1.inOut", stagger: -0.01 }, "<2")
+        .to(".redot", { y: 0, opacity: 1, duration: 7, ease: "sine.inOut", stagger: { each: -0.02, from: "random" } }, "<5")
+        .to(".b4", { scale: 1, duration: 5 }, "<4")
+
+
+      function makeDots(targ) {
+        for (let h = 0; h < numcols; h++) {
+          let newdot = dot.cloneNode(true);
+          let targname = targ.id;
+          newdot.classList.add("b4");
+          newdot.classList.add(colrs[h]);
+          newdot.setAttribute('id', 'd' + dotcount);
+          targ.appendChild(newdot);
+          dotcount++;
+          randx = Math.round(meanx + (normrand() * 100));
+          xspots.push(randx);
+        }
+      }
+      
+
+
+      // tl1 = randoms
+      // tl2 = tube
+
+      maintl.add(tl1)
+        // .add(tl2)
+
+        .set(tl1, { progress: 0.1 })
+        // .progress(1).progress(0.05)
+        .to(tl1, { progress: 0.26, duration: 4.7, ease: "back.in" }, "<0.4")
+        .to(tl1, { progress: 0.5114, duration: 3.9, ease: "sine.out" }, ">");
+
+
+
+
+      function playTweens() {
+        if (!aMatchMedia.matches) {
+          maintl.play(0);
+        }
+        else {
+          maintl.seek(10, false);
+          maintl.pause();
+        }
+      }
+      function pauseTweens() {
+        maintl.pause();
+      }
+
+      // pause animation when scrolled away, restart when scrolled back into view
+      // ScrollTrigger.create({
+      //   trigger: "#archsvg",
+      //   onEnter: playTweens,
+      //   onLeave: pauseTweens,
+      //   onEnterBack: playTweens,
+      //   onLeaveBack: pauseTweens,
+      // });
+
+
+      // GSDevTools.create({ animation: maintl });
+
+    }());
+
+</script>
+
   </section>
 </BaseLayout>
