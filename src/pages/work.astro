@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
 import { gsap } from "gsap";
 // import { Flip } from "gsap/all";
 // gsap.registerPlugin("Flip");
@@ -60,7 +61,7 @@ const pageTitle = "web animation work";
 
 <div class="holdsvg">
   <!-- <svg id="archsvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 650" preserveAspectRatio="xMaxYMax meet" role="img"> -->
-  <svg id="archsvg" xmlns="http://www.w3.org/2000/svg" viewBox="260 118 1300 540" preserveAspectRatio="xMaxYMid slice" role="img">
+  <svg id="archsvg" xmlns="http://www.w3.org/2000/svg" viewBox="260 118 1300 540" preserveAspectRatio="xMinYMid slice" role="img">
 
     <defs>
       <circle id="dot" cx="0" cy="0" r="5" />
@@ -181,9 +182,13 @@ import { CustomEase } from "gsap/CustomEase";
     // const { CustomEase } = await import("gsap/CustomEase");
 // gsap.registerPlugin(CustomEase);
 // console.clear();
-    (function () {
- console.log("using GSAP: ", gsap.version);
-//  console.log("")
+    // (function () {
+document.addEventListener(
+    "astro:page-load",
+    () => {
+
+//  console.log("using GSAP: ", gsap.version);
+
 //  console.log(ScrollTrigger);
 
       // gsap.registerPlugin(ScrollTrigger);
@@ -237,7 +242,7 @@ const tubease = "back.inOut(22)";
         archsvg.appendChild(group);
       }
 
-       console.log("dots, spots:" + dotcount + ", " + xspots);
+      //  console.log("dots, spots:" + dotcount + ", " + xspots);
 
       tl1.set(".grp", { y: 664 })
 
@@ -309,7 +314,9 @@ const tubease = "back.inOut(22)";
 
       // GSDevTools.create({ animation: maintl });
 
-    }());
+    // }());
+    },
+  );
 
 </script>
 

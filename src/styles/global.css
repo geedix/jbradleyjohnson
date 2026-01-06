@@ -218,7 +218,7 @@ footer a {
 .nav-links a:hover,
 .nav-links a:focus {
   background-color: var(--main-bg-color);
-  border-bottom:2px solid var(--mygold);
+  /* border-bottom:2px solid var(--mygold); */
   font-variation-settings: "wght" 60, "wdth" 80, "ital" 20;
   transition: all 0.2s ease-in-out;
 }
@@ -365,7 +365,7 @@ footer a {
   100% {
     /* filter: sepia(0); */
     /* filter: hue-rotate(3deg); */
-    filter:contrast(0.96) hue-rotate(3deg);
+    filter:contrast(0.96) hue-rotate(1deg);
   }
 }
 
