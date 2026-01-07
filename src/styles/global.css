@@ -24,9 +24,6 @@ html {
   /* background-color: var(--myblue); */
   color: var(--mygold);
   font-family: "futura", sans-serif;
-  /* font-family: "Whirly Birdie", sans-serif; */
-  /* font-variation-settings: "wght" 60, "wdth" 150, "ital" 0; */
-  /* font-weight: 60; */
   line-height: 1.4;
 }
 
@@ -40,7 +37,7 @@ section {
 }
 
 section p {
-  max-width: 70ch;
+  max-width: 59ch;
 }
 
 body {
@@ -112,7 +109,7 @@ h6 {
   line-height: 1.2;
   letter-spacing: 0.1em;
   /* font-family:"testjbjb"; */
-  font-family: "Whirly Birdie", "futura", sans-serif;
+  font-family: "Whirly Birdie", "Futura", "Helvetica", sans-serif;
 }
 
 li {
@@ -140,7 +137,7 @@ footer a {
 }
 
 .prostyle {
-  font-family: "Whirly Birdie", "futura", sans-serif;
+  font-family: "Whirly Birdie", "Futura", "Helvetica", sans-serif;
 }
 
 .ctrstuff {
@@ -208,7 +205,7 @@ footer a {
   font-weight: bold;
   text-transform: uppercase;
   border-radius:12px;
-  font-family: "Whirly Birdie";
+  font-family: "Whirly Birdie", "Futura", "Helvetica", sans-serif;
   font-variation-settings: "wght" 60, "wdth" 80, "ital" 0;
   background-color: var(--mygold);
   /* background-color: transparent; */
@@ -299,7 +296,7 @@ footer a {
 
 #jbjself {
   animation-name: hueman;
-  animation-duration: 5s;
+  animation-duration: 3.5s;
   animation-iteration-count: 1;
   border-radius: 50%;
   margin: 20px 0;
@@ -362,22 +359,17 @@ footer a {
 
 @keyframes hueman {
   0% {
-    /* filter: hue-rotate(0deg) */
     filter:contrast(1) hue-rotate(0deg);
-    /* filter:sepia(0); */
-  }
+   }
 
 50% {
-    /* filter: sepia(1);
-     */
-     /* filter: hue-rotate(-65deg); */
-     filter:contrast(9.5) hue-rotate(-65deg);
+     filter:contrast(5) hue-rotate(-65deg);
   }
 
   100% {
     /* filter: sepia(0); */
     /* filter: hue-rotate(3deg); */
-    filter:contrast(0.96) hue-rotate(1deg);
+    filter:contrast(1) hue-rotate(0deg);
   }
 }
 
