@@ -1,7 +1,11 @@
 ---
+import { ClientRouter } from "astro:transitions";
+// import { fade } from "astro:transitions";
+// import { slide } from "astro:transitions";
 ---
 
-<div class="nav-links"> 
+<div class="nav-links collapsid" > 
+    <!-- transition:animate="slide" -->
     <!-- <a href="/">Home</a> -->
     <a href="/about/">About</a>
     <a href="/work/">Web Animation</a>
@@ -27,11 +31,11 @@
         if (hamburger && navlinks) {
             hamburger.addEventListener("click", () => {
                 navlinks.classList.toggle("expanded");
+                navlinks.classList.toggle("collapsid");
                 // hamburger.classList.toggle("is-active");
                 lines.forEach(line => {
                     line.classList.toggle("is-active");
                 }); 
-                
                 // gsap.from(".nav-links a", {y:"-=250", stagger:0.1, duration:0.5, ease:"back.inOut"})
             });
         }

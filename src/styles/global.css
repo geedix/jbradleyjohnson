@@ -37,7 +37,6 @@ html {
 section {
   background-color: transparent;
   padding: 1em 0;
-  border-radius: 1em;
 }
 
 section p {
@@ -50,7 +49,7 @@ body {
   padding: 1rem;
   line-height: 1.8;
   color: blue;
-  min-height: 100vh;
+  min-height: 101vh;
   /* background-image: url('/oneoverlappingpath.svg'); */
   background-image: url('/threeoverlappingpaths.svg');
   background-size: cover;
@@ -172,8 +171,7 @@ footer a {
 }
 
 .is-active{
-  /* transform: rotate(90deg); */
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 #line1.is-active{
   transform: rotate(45deg) translate(0, 15px);
@@ -185,8 +183,13 @@ footer a {
   transform: rotate(-45deg) translate(0, -15px);
 }
 
+/* // this is mobile  */
 .nav-links {
-  display: none;
+  /* display: none; */
+  /* was display none but wouldn't animate.  */
+  display:block;
+  transform:translateY(-100px);
+  /* opacity:0.5; */
   width: 100%;
   top: 3rem;
   max-width: 50ch;
@@ -207,7 +210,6 @@ footer a {
   font-family: "Whirly Birdie";
   font-variation-settings: "wght" 60, "wdth" 80, "ital" 0;
   background-color: var(--mygold);
-
   /* background-color: transparent; */
   border-bottom:2px solid var(--main-bg-color);
   color: var(--myblue); 
@@ -218,7 +220,6 @@ footer a {
 .nav-links a:hover,
 .nav-links a:focus {
   background-color: var(--main-bg-color);
-  /* border-bottom:2px solid var(--mygold); */
   font-variation-settings: "wght" 60, "wdth" 80, "ital" 20;
   transition: all 0.2s ease-in-out;
 }
@@ -231,17 +232,27 @@ footer a {
   left:unset;
   right: 10px;
 }
+/* .collapsid{ */
+  /* transform:translateY(-50px); */
+  /* padding-bottom:100px; */
+  /* opacity:0.1;  */
+/* } */
 
 .expanded {
+  /* opacity:1; */
   display: flex;
   flex-direction: column;
   max-width: fit-content;
   margin:10px auto;
+  transform: translateY(0px);
+  /* transform:translateY(0); */
+  /* padding-bottom:0; */
+  transition: all 0.5s ease-in-out;
 }
 
 .nav-links.expanded a {
-    border: 5px solid var(--main-bg-color);
-    transform:translateY(0px);
+  border: 5px solid var(--main-bg-color);
+  transform:translateY(0px);
   transition: transform 0.3s ease;
 }
 
@@ -378,6 +389,7 @@ footer a {
     justify-content: space-evenly;
     position: static;
     width: auto;
+    transform:translateY(0);
     /* background: var(--main-bg-color); */
   }
 

@@ -1,19 +1,19 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 // import { Flip } from "gsap/all";
 // gsap.registerPlugin("Flip");
 
 // import { ScrollTrigger } from "gsap/all";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 // import ScrollTrigger from "gsap/dist/ScrollTrigger";
 // import { CustomEase } from "gsap/dist/CustomEase"
 // import { CustomEase } from "gsap/dist/CustomEase";
 
 // import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { CustomEase } from "gsap/CustomEase";
+// import { CustomEase } from "gsap/CustomEase";
 
 // const { CustomEase } = await import("gsap/CustomEase");
 
@@ -36,7 +36,8 @@ import "../styles/global.css";
 
 const pageTitle = "web animation work";
 
-
+// const currentPath = Astro.url.pathname;
+// console.log("current:"+currentPath);
 
 
 ---
@@ -120,23 +121,21 @@ letter-spacing:0.03em;
     I’m not responsible for the concept of dots  
     </text>
     <text x="140" y="290" class="oversvg">
-      animating from random piles into organized 
+      animating from random groups into organized 
     </text>
     <text x="140" y="340" class="oversvg">
-      shapes, but I enjoyed designing many  
+      shapes, but I enjoyed designing this and  
     </text>
-    <text x="140" y="390" class="oversvg">variations on the theme, such as this one.
+    <text x="140" y="390" class="oversvg">many other variations on the theme.
   </text>
   </g>
   </svg>
 
 </div>
 
-
     <p>
-      
-      I was with AKQA in San Francisco for a long time. Most recently, I was on PwC’s internal web team (which no longer exists). 
-      Here are some links to my animations that are still on the PwC site:
+      I worked for AKQA from 2005 — 2019. For the past five years, I was on PwC’s internal web team (which no longer exists). 
+      Here are some links to my animations that are still running on the PwC site:
     </p>
     <ul>
       <li>
@@ -186,7 +185,8 @@ import { CustomEase } from "gsap/CustomEase";
 document.addEventListener(
     "astro:page-load",
     () => {
-
+// const currentPath = Astro.url.pathname;
+// console.log("current:"+currentPath);
 //  console.log("using GSAP: ", gsap.version);
 
 //  console.log(ScrollTrigger);
