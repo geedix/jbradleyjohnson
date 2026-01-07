@@ -188,7 +188,8 @@ footer a {
   /* display: none; */
   /* was display none but wouldn't animate.  */
   display:block;
-  transform:translateY(-100px);
+  transform:translateY(-140px);
+  /* transition: all .3s ease; */
   /* opacity:0.5; */
   width: 100%;
   top: 3rem;
