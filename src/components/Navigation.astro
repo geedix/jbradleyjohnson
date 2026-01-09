@@ -1,5 +1,5 @@
 ---
-import { ClientRouter } from "astro:transitions";
+// import { ClientRouter } from "astro:transitions";
 // import { fade } from "astro:transitions";
 // import { slide } from "astro:transitions";
 ---
@@ -18,12 +18,32 @@ import { ClientRouter } from "astro:transitions";
 
 
 </div>
-
+<!-- <script is:inline>
+  const nav = document.querySelector(".nav-links");
+  const navLinks = nav.querySelectorAll("a");
+  const currentURL = window.location.href;
+  navLinks.forEach((link) => {
+    if (link.href === currentURL) {
+      link.classList.add("active");
+    }
+  });
+</script> -->
 
 <script is:inline>
     // import { gsap } from "gsap";
 
     document.addEventListener("astro:page-load", () => {
+  const nav = document.querySelector(".nav-links");
+  const navLinks = nav.querySelectorAll("a");
+  const currentURL = window.location.href;
+  navLinks.forEach((link) => {
+    if (link.href === currentURL) {
+      link.classList.add("active");
+    }
+  });
+
+
+
         const hamburger = document.querySelector(".hamburger");
         const navlinks = document.querySelector(".nav-links");
         const lines = document.querySelectorAll(".hamburger .line");

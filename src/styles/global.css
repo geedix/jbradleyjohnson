@@ -186,6 +186,8 @@ footer a {
   /* was display none but wouldn't animate.  */
   display:block;
   transform:translateY(-140px);
+   border-bottom:5px solid var(--main-bg-color);
+
   /* transition: all .3s ease; */
   /* opacity:0.5; */
   width: 100%;
@@ -207,10 +209,9 @@ footer a {
   border-radius:12px;
   font-family: "Whirly Birdie", "Futura", "Helvetica", sans-serif;
   font-variation-settings: "wght" 60, "wdth" 80, "ital" 0;
-  background-color: var(--mygold);
-  /* background-color: transparent; */
-  border-bottom:2px solid var(--main-bg-color);
   color: var(--myblue); 
+  background-color: var(--mygold);
+
   transform:translateY(-250px);
   transition: all 0.2s ease-in-out;
 }
@@ -218,8 +219,15 @@ footer a {
 .nav-links a:hover,
 .nav-links a:focus {
   background-color: var(--main-bg-color);
+   border-bottom:5px solid var(--mygold);
   font-variation-settings: "wght" 60, "wdth" 80, "ital" 20;
   transition: all 0.2s ease-in-out;
+}
+.nav-links a.active {
+  /* background:skyblue; */
+  /* background-color: var(--mygold); */
+   border-bottom:5px solid var(--mygold);
+  font-variation-settings: "wght" 60, "wdth" 80, "ital" 20;
 }
 
 .mylogo {
@@ -296,7 +304,7 @@ footer a {
 
 #jbjself {
   animation-name: hueman;
-  animation-duration: 3.5s;
+  animation-duration: 2.6s;
   animation-iteration-count: 1;
   border-radius: 50%;
   margin: 20px 0;
