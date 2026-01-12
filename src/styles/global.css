@@ -48,9 +48,11 @@ body {
   color: blue;
   min-height: 101vh;
   /* background-image: url('/oneoverlappingpath.svg'); */
-  background-image: url('/threeoverlappingpaths.svg');
+  background-image: url('/threeoverlappingpaths.svg ');
+  /* background-image: url('/circsdraw.svg'); */
   background-size: cover;
-  background-repeat: repeat;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 
@@ -245,14 +247,11 @@ footer a {
 /* } */
 
 .expanded {
-  /* opacity:1; */
   display: flex;
   flex-direction: column;
   max-width: fit-content;
   margin:10px auto;
-  transform: translateY(0px);
-  /* transform:translateY(0); */
-  /* padding-bottom:0; */
+  transform: translateY(0);
   transition: all 0.5s ease-in-out;
 }
 
