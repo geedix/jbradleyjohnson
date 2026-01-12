@@ -229,7 +229,7 @@ footer a {
   /* background:skyblue; */
   /* background-color: var(--mygold); */
    border-bottom:5px solid var(--mygold);
-  font-variation-settings: "wght" 60, "wdth" 80, "ital" 20;
+  /* font-variation-settings: "wght" 60, "wdth" 80, "ital" 20; */
 }
 
 .mylogo {
