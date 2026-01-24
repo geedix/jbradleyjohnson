@@ -8,7 +8,7 @@
     <!-- transition:animate="slide" -->
     <!-- <a href="/">Home</a> -->
     <a href="/about/">About</a>
-    <a href="/work/">Web Animation</a>
+    <a href="/work/">Animation</a>
     <!-- <a href="/blog/">Blog</a> -->
     <!-- <a href="/comics/">Comics</a> -->
 
@@ -28,11 +28,12 @@
     }
   });
 </script> -->
-
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js">
+  </script>
 <script is:inline>
     // import { gsap } from "gsap";
 
-    document.addEventListener("astro:page-load", () => {
+  document.addEventListener("astro:page-load", () => {
   const nav = document.querySelector(".nav-links");
   const navLinks = nav.querySelectorAll("a");
   const currentURL = window.location.href;
