@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="868" height="704">
+<svg xmlns="http://www.w3.org/2000/svg" width="868" height="704" preserveAspectRatio="xMidYMid meet">
 <defs>
 <style>
 
@@ -25,11 +25,11 @@
       fill:none;  
       
       /* stroke:#000ef7; */
-      stroke: #7ADCFF;
+      stroke: #69DCFF;
      /* stroke-dasharray: 1692 1692; */
-     stroke-width:0.7px;
+     stroke-width:0.8px;
       stroke-dashoffset:16926;  
-      animation: vdash 501s linear infinite;
+      animation: vdash 490s linear infinite;
    }
    .pathh{
       fill:none;  
@@ -39,7 +39,7 @@
          /* stroke-dasharray: 714 714; */
 
       stroke-dashoffset:7137; 
-      animation: hdash 213s linear infinite;
+      animation: hdash 245s linear infinite;
 
    }
    </style>
