@@ -69,7 +69,8 @@ body {
   padding: 1rem;
   line-height: 1.8;
   color: var(--myblue);
-  min-height:200vh;
+  /* always scrollbars   */
+  min-height:101vh;
   background-image: url('/twocolorpaths.svg ');
   background-size: contain;
   background-position: top right;
