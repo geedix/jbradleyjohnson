@@ -69,46 +69,46 @@ const pageTitle = "web animation work";
 
       <style>
         .holdsvg {
-  width: 100%;
-  overflow: hidden;
-  max-height: 700px;
-  display: flex;
-  flex-direction: row-reverse;
-  background-color:#000;
-}
+          width: 100%;
+          overflow: hidden;
+          max-height: 700px;
+          display: flex;
+          flex-direction: row-reverse;
+          background-color:#000;
+        }
 
-.yedot {
-  fill: #ffb600;
-}
+        .yedot {
+          fill: #ffb600;
+        }
 
-.redot {
-  fill: #e0301e;
-}
+        .redot {
+          fill: #e0301e;
+        }
 
-.rodot {
-  fill: #d93954;
-}
+        .rodot {
+          fill: #d93954;
+        }
 
-#archsvg {
-  width: 100%;
-  max-width: 1600px;
-  overflow: visible;
-}
+        #archsvg {
+          width: 100%;
+          max-width: 1600px;
+          overflow: visible;
+        }
 
-.b4 {
-  visibility: hidden;
-}
-#thetext{
-  transform: translate(160px, 0);
-}
+        .b4 {
+          visibility: hidden;
+        }
+        #thetext{
+          transform: translate(160px, 0);
+        }
 
-.oversvg{
-  fill:#fff;
-font-family:'Georgia', monospace;
-font-size:34px;
-max-width:300px;
-letter-spacing:0.03em;
-}
+        .oversvg{
+          fill:#fff;
+          font-family:'Georgia', monospace;
+          font-size:34px;
+          max-width:300px;
+          letter-spacing:0.03em;
+        }
       </style>
 
     </defs>
@@ -580,10 +580,14 @@ import { CustomEase } from "gsap/CustomEase";
       gsap.registerPlugin(CustomEase);
 
     </script> -->
-
-   <script is:inline>
+<!-- <script is:inline src="../scripts/ScrollTrigger/"></script>
+<script is:inline src="../scripts/EasePack/"></script>
+<script is:inline src="../scripts/CustomEase/"></script>
+<script is:inline src="../scripts/MotionPathPlugin/"></script> -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
+<script is:inline>
     // const { CustomEase } = await import("gsap/CustomEase");
-// gsap.registerPlugin(CustomEase);
+// 
 // console.clear();
     // (function () {
 document.addEventListener(
@@ -596,9 +600,9 @@ document.addEventListener(
 //  console.log(ScrollTrigger);
 
       // gsap.registerPlugin(ScrollTrigger);
-
-      // CustomEase.create("tubease", "M0,0 C0,0 0.3,1 0.5,1 0.7,1 1,0.012 1,0");
-const tubease = "back.inOut(22)";
+gsap.registerPlugin(CustomEase);
+      CustomEase.create("tubease", "M0,0 C0,0 0.3,1 0.5,1 0.7,1 1,0.012 1,0");
+// const tubease = "back.inOut(22)";
       const dot = document.getElementById("dot"),
         archsvg = document.getElementById("archsvg"),
         phant = document.getElementById("phant"),
@@ -796,7 +800,7 @@ function mouseAlphas(){
     // console.log("x:"+newX+", y:"+newY)
 
 
-        newX = parseFloat(event.offsetX);
+    newX = parseFloat(event.offsetX);
     newY = parseFloat(event.offsetY);
     mouseAlphas();
   }
