@@ -69,10 +69,10 @@ body {
   padding: 1rem;
   line-height: 1.8;
   color: var(--myblue);
-  min-height: 101vh;
+  min-height:200vh;
   background-image: url('/twocolorpaths.svg ');
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: top right;
   background-repeat: no-repeat;
 }
 
