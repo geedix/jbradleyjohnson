@@ -129,7 +129,7 @@ this dot animation theme for PwC.
 </div>
 
     <p>
-     For the past five years, I was an animator on PwC’s internal creative team. That team was dissolved in November, but some of my animations are still running on the PwC site:
+     For the past five years, I was an animator on <a href="https://www.pwc.com/us/en.html" target="_blank">PwC</a>’s internal creative team. That team was dissolved in November, but some of my animations are still running on the PwC site:
     </p>
     <ul>
       <li>
@@ -165,9 +165,11 @@ this dot animation theme for PwC.
         <a href="https://www.pwc.com/us/en/tech-effect/emerging-tech/microsoft-transforms-gameday-experience.html" target="_blank">PwC/Microsoft Gameday</a> - hero and divider animations
       </li>
     </ul>
+   
 
-
+    <p>Before PwC, I worked at <a href="https://www.akqa.com/studios/san-francisco/" target="_blank">AKQA</a> in San Francisco. I specialized in scripted motion and I managed a team building animations for big brands like Nike, Google and XBox.</p>
 <div class="flexwrap">
+  <p>This background was used in many Audi ads.</p>
   <div id="wrapper" class='backback'>
 
     <div id="triangles">
@@ -189,6 +191,10 @@ this dot animation theme for PwC.
       display:flex;
       justify-content: center;
     }
+    .flexwrap p{
+      margin-right:2em;
+      align-self: center;
+    }
 
     .backback {
       position: absolute;
@@ -198,19 +204,20 @@ this dot animation theme for PwC.
       background-size:300px 300px;
     }
 
-    #whiteback {
+    /* #whiteback {
       position: absolute;
       width: 300px;
       height: 300px;
       top: 300px;
       background-color: white;
-    }
+    } */
 
     #triangles {
       position:absolute;
       top:0;
       left:0;
       background-color: #3253A1;
+      /* background-color: #4d000f; */
       width: 300px;
       height: 300px;
     }
@@ -218,12 +225,12 @@ this dot animation theme for PwC.
     #bluebox polygon{
       opacity:0;
       fill: #79BFFC;
+      /* fill:#f50537; */
     }
     </style>
   </defs>
     
           <g id="bluebox">
-
             <polygon points="258 237 256 267 223 272 258 237 258 237"/>
             <polygon points="234 216 258 237 233 233 234 216 234 216"/>
             <polygon points="233 233 223 272 212 235 233 233 233 233"/>
@@ -560,49 +567,35 @@ this dot animation theme for PwC.
             <polygon points="289 9 308 21 308 -16 289 9 289 9"/>
             <polygon points="258 -16 289 9 308 -16 258 -16 258 -16"/>
           </g>
+
       </svg>
         
     </div>
-    <div id="whiteback"></div>
-
+    
   </div>
 
+  
 </div>
-
-
+<div class="break"></div>
+<div>
+<p>
+  Before AKQA, I did print and web production for <a href="https://lastgasp.com/" target="_blank">Last Gasp</a>, where some of my comics were published and many good times were had. I still enjoy drawing comics and making cartoony animations.
+</p>
     <p>
       I’m on <a href="https://codepen.io/collection/NqbPVa" target="_blank">CodePen</a> and <a href="https://www.linkedin.com/in/geedix/" target="_blank">LinkedIn</a>.
     </p>
+</div>
 
-    <!-- <script type="module">
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { CustomEase } from "gsap/CustomEase";
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.registerPlugin(CustomEase);
 
-    </script> -->
-<!-- <script is:inline src="../scripts/ScrollTrigger/"></script>
-<script is:inline src="../scripts/EasePack/"></script>
-<script is:inline src="../scripts/CustomEase/"></script>
-<script is:inline src="../scripts/MotionPathPlugin/"></script> -->
 <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
 <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
 <script is:inline>
-    // const { CustomEase } = await import("gsap/CustomEase");
-// 
-// console.clear();
-    // (function () {
-
 
     
 document.addEventListener(
     "astro:page-load",
     () => {
 // const currentPath = Astro.url.pathname;
-// console.log("current:"+currentPath);
-//  console.log("using GSAP: ", gsap.version);
-
-//  console.log(ScrollTrigger);
 
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(CustomEase);
@@ -725,8 +718,7 @@ document.addEventListener(
       // GSDevTools.create({ animation: maintl });
 
     // }());
-    },
-  );
+
 
 //// 
 
@@ -741,7 +733,7 @@ var phantomX = { phx: 20 };
 var phantomY = { phy: 10 };
 var phantX, phantY;
 
-const bluetl = gsap.timeline({paused:true});
+const bluetl = gsap.timeline({paused:true, defaults: {ease: "sine.inOut"}});
 
 bluetl.to(phantomX, 3, {phx:300, roundProps:"phx", onUpdate:updateXHandler})
       .to(phantomY, 10, {phy:300, roundProps:"phy", overwrite:false, onUpdate:updateYHandler}, "<")
@@ -771,7 +763,7 @@ function phantomFinger(){
 }
 
 function mouseAlphas(){
-  bluetl.kill();
+  bluetl.pause();
   for(var i=0; i<triangArr.length;i++){
     var myTarg = triangArr[i];
     var myRect = myTarg.getBBox();
@@ -783,34 +775,34 @@ function mouseAlphas(){
   }
 }
 
+  function playTweens() {
+  bluetl.play(0);
+}
+function pauseTweens() {
+  bluetl.pause();
+}
+     // pause animation when scrolled away, restart when scrolled back into view
+  ScrollTrigger.create({
+    trigger: "#triangles",
+    onEnter: playTweens,
+    onLeave: pauseTweens,
+    onEnterBack: playTweens,
+    onLeaveBack: pauseTweens,
+  });
 
-  gsap.defaultEase = Sine.easeInOut;
-
-  window.onload = function () {
-    bluetl.play();
-  };
-   
   // wrapper.addEventListener("mousemove", updateDisplay, false);
   wrapper.addEventListener("pointermove", updateDisplay, false);
   wrapper.addEventListener("click", null);
 
   function updateDisplay(event) {
-
-    // let wrapy= Math.round(wrapper.getBoundingClientRect().y) +window.pageYOffset;
     let wrapy= Math.round(wrapper.getBoundingClientRect().y);
-    // console.log("wrapy:"+wrapy+", window.pageYOffset:"+window.pageYOffset);
-
-    // newX = parseFloat(event.pageX);
-    // newY = parseFloat(event.pageY-(wrapy+320));
-    // console.log("x:"+newX+", y:"+newY)
-
-
     newX = parseFloat(event.offsetX);
     newY = parseFloat(event.offsetY);
     mouseAlphas();
   }
 
-
+    },
+  );
 
 </script>
 
