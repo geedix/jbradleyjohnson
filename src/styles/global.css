@@ -60,7 +60,6 @@ section {
 }
 
 section p {
-  max-width: 45ch;
   padding: 0 2rem 0 0; 
 }
 
@@ -70,6 +69,10 @@ section p {
 }
 .bio p {
   align-self: center;
+  max-width: 44ch;
+}
+.work p{
+  max-width: 66ch;
 }
 
 body {
@@ -305,6 +308,23 @@ border-bottom:3px solid var(--main-bg-color);
   margin: 1em auto;
   padding-top: 2em;
 }
+.holdsvg {
+  width: 100%;
+  overflow: hidden;
+  max-height: 700px;
+  display: flex;
+  flex-wrap:wrap;
+  /* flex-direction: row-reverse; */
+  background-color:#000;
+  justify-content: right;
+  text-align: right;
+}
+.holdsvg p{
+  padding-left:1rem;
+  color:var(--main-bg-color);
+      align-self: center;
+      /* max-width: 6ch; */
+}
 
 #banneran {
   width: 100%;
@@ -449,7 +469,9 @@ border-bottom:3px solid var(--main-bg-color);
     right:unset;
   }
 
-
+  .holdsvg{
+    flex-wrap: nowrap;
+  }
   section {
     padding: 4em 1.5em;
   }
