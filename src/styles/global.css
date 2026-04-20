@@ -322,9 +322,9 @@ border-bottom:3px solid var(--main-bg-color);
 .holdsvg p{
   padding-left:1rem;
   color:var(--main-bg-color);
-      align-self: center;
-       font-family: monospace;
-    font-size: large;
+  align-self: center;
+  font-family: "Andale Mono", "Monaco", "Lucida Console", monospace;
+  font-size: large;
 }
 
 #banneran {
