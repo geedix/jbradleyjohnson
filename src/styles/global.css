@@ -162,8 +162,9 @@ li {
   line-height: 1.8;
 }
 
-footer {
-  font-size: x-small;
+footer p{
+  font-size: 7px;
+  text-align: center;
 }
 
 footer a {
@@ -407,6 +408,20 @@ border-bottom:3px solid var(--main-bg-color);
   stroke-dasharray: 38;
 }
 
+hr{
+  
+   display: block;
+  height: 1px;
+  /* border: 0; */
+  /* border-top: 1px solid #ccc; */
+  border-top:1px solid var(--palerblue);
+  /* margin: 1em 0; */
+  /* padding: 0; */
+  /* width:40%; */
+  /* align-self: right; */
+  margin: 0 20% 0 20%;
+}
+
 /* // resume animated sig:  */
 .john {
   position: relative;
@@ -491,3 +506,9 @@ border-bottom:3px solid var(--main-bg-color);
   }
 
 }
+
+@media print {
+      .noprint {
+        visibility: hidden;
+      }
+  }
