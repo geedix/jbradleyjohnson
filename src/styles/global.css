@@ -64,9 +64,16 @@ section p {
   max-width: 84ch;
 }
 
-H2 span {
-    padding-right: 1em;
+h2 span {
+
+    padding: 1px 10px 1px 5px;
     background-color: var(--mygold);
+    border-radius:5px;
+}
+h3 span {
+   padding:1px 10px;
+    background-color: var(--myblue);
+    border-radius:5px;
 }
 
 .bio {
@@ -133,7 +140,7 @@ h1 {
 
 h3 {
   color: var(--mygold);
-  background-color: var(--myblue);
+  /* background-color: var(--myblue); */
   text-align: center;
   border-radius: 5px;
   /* font-family: "monaco", " System Mono", 'Lucida Sans', monospace; */
