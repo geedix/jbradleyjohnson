@@ -61,6 +61,12 @@ section {
 
 section p {
   padding: 0 2rem 0 0; 
+  max-width: 84ch;
+}
+
+H2 span {
+    padding-right: 1em;
+    background-color: var(--mygold);
 }
 
 .bio {
