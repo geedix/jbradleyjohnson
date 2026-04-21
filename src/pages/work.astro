@@ -92,7 +92,7 @@ this dot animation theme for PwC.
     <div class="holdsvg">
 
   <p>
-    This smoke was part of a large holiday scene for PwC. We wanted organic motion yet geometric shapes. 
+    This smoke was part of a large animated holiday scene for PwC. There were snowflakes, twinkling stars and shoppers.  
   </p>
       <svg id="ho24svg" xmlns="http://www.w3.org/2000/svg" viewBox="580 250 600 200" preserveAspectRatio="xMidYMid slice" role="img">
                                     
@@ -178,7 +178,7 @@ this dot animation theme for PwC.
     <!-- </ul> -->
    
 
-    <p>Before PwC, I worked at <a href="https://www.akqa.com/studios/san-francisco/" target="_blank">AKQA</a> in San Francisco. I specialized in scripted motion. I managed a team building animations for big brands. It was very professional work. We don't need to see it today.</p>
+    <p>Before PwC, I worked at <a href="https://www.akqa.com/studios/san-francisco/" target="_blank">AKQA</a> in San Francisco. I specialized in scripted motion. I managed a team building animations for big brands.</p>
 <div class="flexwrap">
   <p class="pright">This interactive background was loaded into Audi ads for desktop users.</p>
   <div id="wrapper" class='backback'>
@@ -260,7 +260,8 @@ this dot animation theme for PwC.
       }
       #chimbley{
           /* transform: scale(0.4) translate(2298px, 1001px); */
-          transform: scale(0.4) translate(2168px, 1001px);
+          /* transform: scale(0.4) translate(2168px, 1001px); */
+          transform: scale(0.35) translate(2486px, 1164px)
       }
       .bricks{
         fill:firebrick;
@@ -909,9 +910,9 @@ let hasStopped=false;
     hasStopped=false;
     gsap.set("#smok1", { autoAlpha: 0 })
     gsap.set(".smoki", { x: 940, y: 403, opacity:1, scale: smoks })
-    gsap.to(".smoki", { x: smokx, ease: "sine.inOut", duration: 9.5, stagger: { each: 0.32, repeat: 4 } });
-    gsap.to(".smoki", { y: smoky, scale: "+=1.8", ease: "sine.out", duration: 9.5, stagger: { each: 0.32, repeat: 4 } });
-    gsap.to(".smoki", { opacity: 0, ease: "expo.in", duration: 9.5, stagger: { each: 0.32, repeat: 4 } });
+    gsap.to(".smoki", { x: smokx, ease: "sine.inOut", duration: 9.5, stagger: { each: 0.32, repeat: 8 } });
+    gsap.to(".smoki", { y: smoky, scale: "+=1.8", ease: "sine.out", duration: 9.5, stagger: { each: 0.32, repeat: 8 } });
+    gsap.to(".smoki", { opacity: 0, ease: "expo.in", duration: 9.5, stagger: { each: 0.32, repeat: 8 } });
   }
 
   function stopSmoke() {
@@ -925,7 +926,7 @@ let hasStopped=false;
   
 
   startSmoke();
-  gsap.delayedCall(180,stopSmoke);
+  gsap.delayedCall(94,stopSmoke);
 
 // document.addEventListener("click", function (e) {
 
