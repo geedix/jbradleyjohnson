@@ -439,6 +439,10 @@ hr{
   /* stroke-dasharray: 1200; */
 }
 
+      .noprint {
+        visibility: hidden;
+      }
+
 @view-transition {
   navigation: auto;
 }
@@ -504,6 +508,12 @@ hr{
   section {
     padding: 4em 1.5em;
   }
+  section.resume {
+    padding: 1em 1.5em;
+  }
+        .noprint {
+        visibility: visible;
+      }
 
 }
 
