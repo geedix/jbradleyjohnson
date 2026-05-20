@@ -1,0 +1,409 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+
+  <!-- <script>
+    var clickTAG = "https://www.audiusa.com/models/audi-a8";
+  </script> -->
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      position: absolute;
+      width: 970px;
+      height: 250px;
+      overflow: hidden;
+      border: 1px solid #666;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    #bg {
+      width: 970px;
+      height: 250px;
+    }
+
+    #rings {
+      position: absolute;
+      top: 20px;
+      left: 28px;
+    }
+
+    #text1 {
+      position: absolute;
+      top: 54px;
+      left: 0;
+    }
+
+    #text2 {
+      position: absolute;
+      top: 210px;
+      left: 632px;
+    }
+
+    #cta {
+      position: absolute;
+      top: 210px;
+      left: 0;
+      cursor: pointer;
+    }
+
+    #pane {
+      position: absolute;
+      width: 1px;
+      height: 250px;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    #panehandle {
+      position: absolute;
+      top: 0;
+      left: -22px;
+    }
+
+    .vid {
+      width: 970px;
+      height: 250px;
+    }
+
+    .grayline {
+      position: relative;
+      margin: 0 auto;
+      left: 0;
+      border-radius: 1px;
+      height: 3px;
+      width: 19px;
+      background: DarkGray;
+      position: relative;
+      display: block;
+      content: '';
+      transition: all 250ms ease-in-out;
+    }
+
+    .grayline span {
+      transform: none;
+    }
+
+    #grayline1 {
+      top: 17px;
+    }
+
+    #grayline2 {
+      top: 23px;
+    }
+
+    #grayline1.active {
+      transform: rotate(32deg);
+    }
+
+    #grayline2.active {
+      transform: rotate(-32deg);
+    }
+
+    #circ {
+      position: absolute;
+      top: 100px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: white;
+      width: 45px;
+      height: 45px;
+    }
+
+    #bgclick {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 970px;
+      height: 250px;
+    }
+
+    #playvid {
+      position: absolute;
+      top: 180px;
+      left: -2222px;
+      width: 25px;
+      height: 25px;
+      display: none;
+    }
+
+    #pausevid {
+      position: absolute;
+      top: 180px;
+      left: -2222px;
+      width: 25px;
+      height: 25px;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='wrapper'>
+    <div id='bg'>
+      <video class='vid' id='vid1' muted loop src='slider_right_2.mp4'></video>
+    </div>
+
+    <div id='text2'>
+      <img src='atechrev672x76.png' width='336' height='38'>
+    </div>
+    <div id='pane'>
+      <video class='vid' id='vid2' muted loop src='slider_left_2.mp4'></video>
+      <div id='text1'><img src='adesign564x82.png' width='282' height='41'></div>
+    </div>
+
+    <a id='bgclick' target='_blank'></a>
+
+    <div id="panehandle"><img src='bar_nocirc.png' width='47' height='250'>
+      <div id='circ'>
+        <div id='grayline1' class='grayline'></div>
+        <div id='grayline2' class='grayline'></div>
+      </div>
+
+    </div>
+    <div id='rings'><img src='rings_wh.png' width='68'></div>
+    <div id='playvid'><img src='play50.png' width='25' height='25'></div>
+    <div id='pausevid'><img src='pause50.png' width='25' height='25'></div>
+    <a id='cta' target='_blank'><img src='explorecta_261x26_2x.png' width='261' height='26'></a>
+  </div>
+
+
+  <!-- - - - - - -  -->
+
+  <script>
+    
+    var animationID;
+
+    const minWidth = 1,
+        maxWidth = 967,
+        maxHeight = 249;
+
+    let oldE;
+
+
+    var mc = function (id) { return document.getElementById(id) };
+    // mc('bgclick').href = clickTAG;
+    // mc('cta').href = clickTAG;
+
+    mc('bgclick').addEventListener('click', function (e) {
+      // console.log('background clickthrough');
+      stopVids();
+    })
+    mc('cta').addEventListener('click', function (e) {
+      // console.log('cta clickthrough');
+      stopVids();
+    })
+    var imageOffset = 20;
+    var xmemory = [0];
+    var clicked = null;
+    var onPaneHandle;
+    var paneRect, x, y;
+    var redraw = false;
+    var movingLeft = false;
+    var movingRight = false;
+
+    var playvid = document.getElementById('playvid');
+    var pausevid = document.getElementById('pausevid');
+
+    var bannerTimeout;
+
+    function unsetPanes() {
+      unPoint();
+    }
+    function setBounds(element, x, paneWidth) {
+      element.style.left = x + 'px';
+      element.style.width = paneWidth + 'px';
+    }
+
+    function pauseClick(e) {
+      window.clearTimeout(bannerTimeout);
+      stopVids();
+    }
+    function playClick() {
+      playVids();
+    }
+    function showPlaybtn() {
+      playvid.style.display = 'block';
+      pausevid.style.display = 'none';
+    }
+    function showPausebtn() {
+      playvid.style.display = 'none';
+      pausevid.style.display = 'block';
+    }
+
+    function onMouseDown(e) {
+      panehandle.style.transform = 'none';
+      window.clearTimeout(bannerTimeout);
+      e.preventDefault();
+      playVids();
+      reportX(e);
+      var isResizing = onPaneHandle;
+      clicked = { isResizing: isResizing, };
+      animate();
+    }
+
+    function reportX(e) {
+      paneRect = pane.getBoundingClientRect();
+      x = e.clientX;
+      xmemory.push(x);
+      y = e.clientY;
+      if (x < maxWidth) {
+        onPaneHandle = ((x >= (paneRect.width - imageOffset)) && (y < maxHeight));
+      }
+    }
+
+    function pointLeft() {
+      gsap.to(mc('grayline1'), .2, { rotation: -32 });
+      gsap.to(mc('grayline2'), .2, { rotation: 32 });
+    }
+    function pointRight() {
+      gsap.to(mc('grayline1'), .2, { rotation: 32 });
+      gsap.to(mc('grayline2'), .2, { rotation: -32 });
+    }
+    function unPoint() {
+      movingLeft = false;
+      movingRight = false;
+      gsap.to(mc('grayline1'), .2, { rotation: 0 });
+      gsap.to(mc('grayline2'), .2, { rotation: 0 });
+    }
+
+    var e;
+
+    function onMove(ee) {
+      var newE = ee.clientX;
+      if (clicked) {
+        if ((newE < x) && (movingLeft == false)) {
+          pointLeft();
+          movingLeft = true;
+          movingRight = false;
+        }
+        else if ((newE > x) && (movingRight == false)) {
+          pointRight();
+          movingLeft = false;
+          movingRight = true;
+        }
+        else if (newE === x) {
+          unPoint();
+        }
+      }
+      e = ee;
+      reportX(ee);
+      redraw = true;
+    }
+    function initialMove() {
+      gsap.to(mc('panehandle'), 2.6, { x: 458, ease: Power1.easeOut, onComplete: unsetPanes });
+      gsap.to(mc('pane'), 2.6, { width: 458, ease: Power1.easeOut, onComplete: makeInteractive });
+      pointRight();
+      playVids();
+      bannerTimeout = window.setTimeout(stopVids, 15000);
+    }
+    function makeInteractive() {
+      panehandle.addEventListener('mousedown', onMouseDown);
+      document.addEventListener('mousemove', onMove);
+      panehandle.addEventListener('mouseup', onMouseUp);
+      playvid.addEventListener('click', playClick);
+      pausevid.addEventListener('click', pauseClick);
+    }
+    function animate() {
+      animationID = requestAnimationFrame(animate);
+      if (!redraw) return;
+      redraw = false;
+      if (clicked && clicked.isResizing) {
+        if (xmemory.length > 5) {
+          xmemory = xmemory.slice(xmemory.length - 5, xmemory.length);
+        }
+        if (x > maxWidth) {
+          x = maxWidth;
+        }
+        pane.style.width = Math.max(x, minWidth) + 'px';
+        panehandle.style.left = (Math.max(x, minWidth)) - 24 + 'px';
+        return;
+      }
+      if (onPaneHandle) {
+        pane.style.cursor = 'ew-resize';
+      } else {
+        pane.style.cursor = 'default';
+      }
+    }
+
+    var circle = document.getElementById("circ");
+    var grayline1 = document.getElementById("grayline1");
+    var grayline2 = document.getElementById("grayline2");
+    var timeoutID;
+
+    function onMouseUp(upEvent) {
+      timeoutID = window.setTimeout(unPoint, 100);
+      bannerTimeout = window.setTimeout(stopVids, 15000);
+      clicked = null;
+      cancelAnimationFrame(animationID);
+      e = upEvent;
+      reportX(upEvent);
+      if ((onPaneHandle) && (x < 990)) {
+        goMomentum();
+      }
+    }
+
+    function goMomentum() {
+      if (x > maxWidth) {
+        x = maxWidth;
+      }
+      else if (x < minWidth) {
+        x = minWidth;
+      }
+      while (xmemory.length < 5) {
+        xmemory.push(xmemory[0]);
+      }
+
+      var moveDist = ((xmemory[0]) - (xmemory[xmemory.length - 1]));
+      if (moveDist === 0) {
+        moveDist = 0;
+      }
+      else {
+        moveDist = (-moveDist);
+      }
+      if (x + moveDist > maxWidth) {
+        moveDist = (maxWidth - x) - 3;
+      }
+      else if (x + moveDist < minWidth) {
+        moveDist = x - minWidth;
+      }
+      var moveTarg = x + moveDist;
+      var tweenTime = Math.min(Math.max(Math.abs(moveDist * .008), .3), 1.3);
+      gsap.to(mc('panehandle'), tweenTime, { left: moveTarg - 22, ease: Power2.easeOut });
+      gsap.to(mc('pane'), tweenTime, { width: moveTarg, ease: Power2.easeOut });
+    }
+
+    function playVids() {
+      mc('vid1').play();
+      mc('vid2').play();
+      showPausebtn();
+    }
+    function stopVids() {
+      mc('vid1').pause();
+      mc('vid2').pause();
+      showPlaybtn();
+    }
+
+    initialMove();
+
+window.addEventListener('scroll', function () {
+    console.log('Scroll event detected in index which is the ad in an iframe');
+});
+
+  </script>
+</body>
+
+</html>
