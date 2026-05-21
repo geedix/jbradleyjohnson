@@ -525,11 +525,14 @@ hr{
         visibility: hidden;
       }
       h1{
-        margin-top:-90px;
+        /* margin-top:-90px; */
+        font-size:xx-large;
+        margin: -90px 0 0 0;
+        padding:0;
       }
       .mylogo{
-        transform:scale(1.6);
-        left:64px;
+        transform:scale(1.64);
+        left:58px;
         right:unset;
       }
       
