@@ -442,7 +442,9 @@ hr{
       .noprint {
         visibility: hidden;
       }
-
+.box{
+  max-width:67ch;
+}
 
 @view-transition {
   navigation: auto;
