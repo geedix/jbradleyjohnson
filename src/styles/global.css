@@ -122,6 +122,13 @@ h1 {
   height: 0;
 }
 
+#svgself{
+  position:absolute;
+  right:8%;
+  width:20%;
+  display:none;
+}
+
 @keyframes breathe {
   0% {
     font-variation-settings: "ital" 0, "wdth" 80
@@ -534,6 +541,13 @@ hr{
         transform:scale(1.64);
         left:58px;
         right:unset;
+      }
+      #svgself{
+        position:absolute;
+        right:12%;
+        top:5%;
+        width:25%;
+        display:block;
       }
       
   }
