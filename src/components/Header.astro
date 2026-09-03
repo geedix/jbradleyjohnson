@@ -51,6 +51,9 @@ import Navigation from "./Navigation.astro";
   stroke-linejoin="round" stroke-miterlimit="1.5" clip-rule="evenodd" viewBox="0 0 512 512">
   <defs>
     <style>
+      #svgself{
+        opacity:0;
+      }
       #svgself path {
         fill: none;
         stroke: #0000ff;
@@ -214,9 +217,8 @@ import Navigation from "./Navigation.astro";
    document.addEventListener("DOMContentLoaded", function (event) {
     //   console.log("Dom ready.");
 
-
     const jbjtl = gsap.timeline({paused:true});
-      jbjtl.set("svg", { opacity: 1 });
+      jbjtl.set("#svgself", { opacity: 1 });
       // gsap.set("#rcirc", { scale: 1.3 });
       jbjtl.from("path", { strokeDashoffset: 38, duration: 0.21, ease: "none", stagger: 0.17 }); 
       gsap.to(jbjtl, {progress:1, duration:6.4, ease:"sine.out"})
